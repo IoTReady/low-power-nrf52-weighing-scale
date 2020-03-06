@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Footprint_nrf_scale)(type KiCad)(uri ${KIPRJMOD}/nrf_scale_sym_ft/Footprint_nrf_scale)(options "")(descr ""))
+)

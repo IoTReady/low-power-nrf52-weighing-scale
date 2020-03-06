@@ -1,7 +1,7 @@
 (sym_lib_table
-  (lib (name Regulator_Linear)(type Legacy)(uri /home/prithvi/KiCadProjects/kicad-symbols/Regulator_Linear.lib)(options "")(descr ""))
-  (lib (name Transistor_BJT)(type Legacy)(uri /home/prithvi/KiCadProjects/kicad-symbols/Transistor_BJT.lib)(options "")(descr ""))
-  (lib (name Connector)(type Legacy)(uri /home/prithvi/KiCadProjects/kicad-symbols/Connector.lib)(options "")(descr ""))
-  (lib (name Device)(type Legacy)(uri /home/prithvi/KiCadProjects/kicad-symbols/Device.lib)(options "")(descr ""))
   (lib (name scale_hx711-rescue)(type Legacy)(uri ${KIPRJMOD}/scale_hx711-rescue.lib)(options "")(descr ""))
+  (lib (name sense)(type Legacy)(uri /home/shubham/IoTReady/nrf_scale/weighing_scale_nrf/design/sense_sch/sense.lib)(options "")(descr ""))
+  (lib (name scale_lpv821-rescue)(type Legacy)(uri /home/shubham/IoTReady/nrf_scale/weighing_scale_nrf/design/scale_lpv821/scale_lpv821-rescue.lib)(options "")(descr ""))
+  (lib (name scale_lpv821-cache)(type Legacy)(uri /home/shubham/IoTReady/nrf_scale/weighing_scale_nrf/design/scale_lpv821/scale_lpv821-cache.lib)(options "")(descr ""))
+  (lib (name scale_hx711-cache)(type Legacy)(uri ${KIPRJMOD}/scale_hx711-cache.lib)(options "")(descr ""))
 )
