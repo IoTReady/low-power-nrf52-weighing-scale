@@ -1,0 +1,342 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L sense:Conn_01x04 J?
+U 1 1 5E7BE76B
+P 3150 4200
+F 0 "J?" H 3068 3775 50  0000 C CNN
+F 1 "Load cell" H 3068 3866 50  0000 C CNN
+F 2 "" H 3150 4200 50  0001 C CNN
+F 3 "" H 3150 4200 50  0001 C CNN
+	1    3150 4200
+	-1   0    0    1   
+$EndComp
+Text Label 3900 4200 2    50   ~ 0
+LOADCELL_IN-
+Text Label 3900 4300 2    50   ~ 0
+LOADCELL_IN+
+Wire Wire Line
+	3900 4300 3350 4300
+Wire Wire Line
+	3350 4200 3900 4200
+Wire Wire Line
+	3350 4100 4100 4100
+Wire Wire Line
+	4100 4100 4100 4200
+$Comp
+L sense:GND #PWR?
+U 1 1 5E7D7679
+P 4100 4200
+F 0 "#PWR?" H 4100 3950 50  0001 C CNN
+F 1 "GND" H 4100 4050 50  0000 C CNN
+F 2 "" H 4100 4200 60  0000 C CNN
+F 3 "" H 4100 4200 60  0000 C CNN
+	1    4100 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L sense:LPV811DBV U?
+U 1 1 5E604584
+P 6750 2550
+F 0 "U?" H 7094 2596 50  0000 L CNN
+F 1 "LPV821DBV" H 6850 2400 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6650 2350 50  0001 L CNN
+F 3 "https://www.ti.com/lit/ds/symlink/lpv812.pdf" H 6750 2750 50  0001 C CNN
+	1    6750 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L sense:LPV811DBV U?
+U 1 1 5E605185
+P 6800 4000
+F 0 "U?" H 7144 4046 50  0000 L CNN
+F 1 "LPV821DBV" H 6900 3850 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 6700 3800 50  0001 L CNN
+F 3 "https://www.ti.com/lit/ds/symlink/lpv812.pdf" H 6800 4200 50  0001 C CNN
+	1    6800 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L sense:GND #PWR?
+U 1 1 5E605B37
+P 6700 4400
+F 0 "#PWR?" H 6700 4150 50  0001 C CNN
+F 1 "GND" H 6700 4250 50  0000 C CNN
+F 2 "" H 6700 4400 60  0000 C CNN
+F 3 "" H 6700 4400 60  0000 C CNN
+	1    6700 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 4300 6700 4400
+$Comp
+L sense:GND #PWR?
+U 1 1 5E606A08
+P 6650 2950
+F 0 "#PWR?" H 6650 2700 50  0001 C CNN
+F 1 "GND" H 6650 2800 50  0000 C CNN
+F 2 "" H 6650 2950 60  0000 C CNN
+F 3 "" H 6650 2950 60  0000 C CNN
+	1    6650 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 2850 6650 2950
+$Comp
+L sense:VDD #PWR?
+U 1 1 5E606F89
+P 6650 2150
+F 0 "#PWR?" H 6650 2000 50  0001 C CNN
+F 1 "VDD" H 6667 2323 50  0000 C CNN
+F 2 "" H 6650 2150 60  0000 C CNN
+F 3 "" H 6650 2150 60  0000 C CNN
+	1    6650 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 2150 6650 2250
+$Comp
+L sense:VDD #PWR?
+U 1 1 5E6083B8
+P 6700 3600
+F 0 "#PWR?" H 6700 3450 50  0001 C CNN
+F 1 "VDD" H 6717 3773 50  0000 C CNN
+F 2 "" H 6700 3600 60  0000 C CNN
+F 3 "" H 6700 3600 60  0000 C CNN
+	1    6700 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 3600 6700 3700
+$Comp
+L sense:R R?
+U 1 1 5E60895B
+P 5650 3500
+F 0 "R?" H 5720 3546 50  0000 L CNN
+F 1 "470" H 5720 3455 50  0000 L CNN
+F 2 "" V 5580 3500 50  0001 C CNN
+F 3 "" H 5650 3500 50  0001 C CNN
+	1    5650 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:MIC5205-3.3YM5 U?
+U 1 1 5E60F58C
+P 4000 2550
+F 0 "U?" H 4000 2892 50  0000 C CNN
+F 1 "MIC5205-3.3YM5" H 4000 2801 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 4000 2875 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005785A.pdf" H 4000 2550 50  0001 C CNN
+	1    4000 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 4000 3900 4000
+Text Label 3900 4000 2    50   ~ 0
+LOADCELL_VDD
+$Comp
+L sense:VDD #PWR?
+U 1 1 5E614463
+P 3450 2350
+F 0 "#PWR?" H 3450 2200 50  0001 C CNN
+F 1 "VDD" H 3467 2523 50  0000 C CNN
+F 2 "" H 3450 2350 60  0000 C CNN
+F 3 "" H 3450 2350 60  0000 C CNN
+	1    3450 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 2350 3450 2450
+Wire Wire Line
+	3450 2450 3700 2450
+Wire Wire Line
+	3700 2550 3550 2550
+Wire Wire Line
+	4300 2450 5150 2450
+Text Label 5150 2450 2    50   ~ 0
+LOADCELL_VDD
+Wire Wire Line
+	4300 2550 4500 2550
+Wire Wire Line
+	4500 2550 4500 2600
+$Comp
+L sense:C C?
+U 1 1 5E615C76
+P 4500 2750
+F 0 "C?" H 4615 2796 50  0000 L CNN
+F 1 "470pF" H 4615 2705 50  0000 L CNN
+F 2 "" H 4538 2600 50  0001 C CNN
+F 3 "" H 4500 2750 50  0001 C CNN
+	1    4500 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L sense:GND #PWR?
+U 1 1 5E616119
+P 4500 3050
+F 0 "#PWR?" H 4500 2800 50  0001 C CNN
+F 1 "GND" H 4500 2900 50  0000 C CNN
+F 2 "" H 4500 3050 60  0000 C CNN
+F 3 "" H 4500 3050 60  0000 C CNN
+	1    4500 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 2900 4500 3050
+$Comp
+L sense:GND #PWR?
+U 1 1 5E61730E
+P 4000 3050
+F 0 "#PWR?" H 4000 2800 50  0001 C CNN
+F 1 "GND" H 4000 2900 50  0000 C CNN
+F 2 "" H 4000 3050 60  0000 C CNN
+F 3 "" H 4000 3050 60  0000 C CNN
+	1    4000 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2850 4000 3050
+Text HLabel 3450 2550 0    50   Input ~ 0
+LOADCELL_EN
+$Comp
+L sense:R R?
+U 1 1 5E61C78C
+P 3550 2800
+F 0 "R?" H 3620 2846 50  0000 L CNN
+F 1 "1M" H 3620 2755 50  0000 L CNN
+F 2 "" V 3480 2800 50  0001 C CNN
+F 3 "" H 3550 2800 50  0001 C CNN
+	1    3550 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L sense:GND #PWR?
+U 1 1 5E61CE49
+P 3550 3050
+F 0 "#PWR?" H 3550 2800 50  0001 C CNN
+F 1 "GND" H 3550 2900 50  0000 C CNN
+F 2 "" H 3550 3050 60  0000 C CNN
+F 3 "" H 3550 3050 60  0000 C CNN
+	1    3550 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 2950 3550 3050
+Wire Wire Line
+	3550 2650 3550 2550
+Connection ~ 3550 2550
+Wire Wire Line
+	3550 2550 3450 2550
+$Comp
+L sense:C C?
+U 1 1 5E627173
+P 2550 2750
+F 0 "C?" H 2665 2796 50  0000 L CNN
+F 1 "2.2uF" H 2665 2705 50  0000 L CNN
+F 2 "" H 2588 2600 50  0001 C CNN
+F 3 "" H 2550 2750 50  0001 C CNN
+	1    2550 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L sense:GND #PWR?
+U 1 1 5E627179
+P 2550 3050
+F 0 "#PWR?" H 2550 2800 50  0001 C CNN
+F 1 "GND" H 2550 2900 50  0000 C CNN
+F 2 "" H 2550 3050 60  0000 C CNN
+F 3 "" H 2550 3050 60  0000 C CNN
+	1    2550 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2900 2550 3050
+Wire Wire Line
+	2550 2600 2550 2450
+Wire Wire Line
+	2550 2450 3450 2450
+Connection ~ 3450 2450
+Text Label 5850 2450 0    50   ~ 0
+LOADCELL_IN-
+Wire Wire Line
+	5850 2450 6450 2450
+Text Label 5900 3900 0    50   ~ 0
+LOADCELL_IN+
+Wire Wire Line
+	5900 3900 6500 3900
+Wire Wire Line
+	6500 4100 5650 4100
+Wire Wire Line
+	5650 4100 5650 3650
+Wire Wire Line
+	5650 3350 5650 3200
+Wire Wire Line
+	5650 2650 6450 2650
+Wire Wire Line
+	5650 3200 6900 3200
+Connection ~ 5650 3200
+Wire Wire Line
+	5650 3200 5650 2650
+Wire Wire Line
+	5650 4100 5650 4650
+Wire Wire Line
+	5650 4650 6900 4650
+Connection ~ 5650 4100
+$Comp
+L sense:R R?
+U 1 1 5E642A4C
+P 7050 4650
+F 0 "R?" V 6950 4650 50  0000 L CNN
+F 1 "82k" V 7150 4600 50  0000 L CNN
+F 2 "" V 6980 4650 50  0001 C CNN
+F 3 "" H 7050 4650 50  0001 C CNN
+	1    7050 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L sense:R R?
+U 1 1 5E6430A2
+P 7050 3200
+F 0 "R?" V 6950 3150 50  0000 L CNN
+F 1 "82k" V 7150 3150 50  0000 L CNN
+F 2 "" V 6980 3200 50  0001 C CNN
+F 3 "" H 7050 3200 50  0001 C CNN
+	1    7050 3200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7200 3200 7500 3200
+Wire Wire Line
+	7500 3200 7500 2550
+Wire Wire Line
+	7500 2550 7050 2550
+Wire Wire Line
+	7500 4650 7500 4000
+Wire Wire Line
+	7500 4000 7100 4000
+Text HLabel 7600 4000 2    50   Output ~ 0
+SCALE_OUT-
+Wire Wire Line
+	7600 4000 7500 4000
+Connection ~ 7500 4000
+Text HLabel 7600 2550 2    50   Output ~ 0
+SCALE_OUT+
+Wire Wire Line
+	7600 2550 7500 2550
+Connection ~ 7500 2550
+Wire Wire Line
+	7200 4650 7500 4650
+$EndSCHEMATC

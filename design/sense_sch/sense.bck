@@ -1,0 +1,60 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP +1V2
+D Power symbol creates a global label with name "+1V2"
+K power-flag
+$ENDCMP
+#
+$CMP +1V8
+D Power symbol creates a global label with name "+1V8"
+K power-flag
+$ENDCMP
+#
+$CMP +3.3V
+D Power symbol creates a global label with name "+3.3V"
+K power-flag
+$ENDCMP
+#
+$CMP +3V3
+D Power symbol creates a global label with name "+3V3"
+K power-flag
+$ENDCMP
+#
+$CMP AM0805
+D Low power RTC
+K RTC
+F https://www.ambiqmicro.com/static/rtc/files/AM08X5_Data_Sheet_DS0002V1p3.pdf
+$ENDCMP
+#
+$CMP Antenna
+D Antenna
+K antenna
+F ~
+$ENDCMP
+#
+$CMP BALF-112X-01D3
+D 50 ohm nominal input / conjugate match balun CC1120, CC1125
+$ENDCMP
+#
+$CMP BQ21040
+D bq210400.8-A, Single-Input,SingleCell Li-Ion and Li-Pol Battery Charge
+F http://www.ti.com/lit/ds/symlink/bq21040.pdf
+$ENDCMP
+#
+$CMP Conn_02x10_Odd_Even
+D Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP EINK_GDEW0154M09_154IN_200X200
+D fast refresh e-ink display
+K fast refresh e-ink display
+$ENDCMP
+#
+$CMP HX711
+D AVIA Semiconductor HX711 - ADC 24-Bit Analog-to-Digital Converter for Weigh Scales<li><a href= https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf >Datasheet</a></li> <b>SparkFun Products:</b><ul><li><a href= https://www.sparkfun.com/products/13879 >SparkFun Load Cell Amplifier - HX711 </a></li></ul>
+K PROD_ID:IC-12445
+$ENDCMP
+#
+#End Doc Library
