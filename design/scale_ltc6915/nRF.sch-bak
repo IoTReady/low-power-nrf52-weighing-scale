@@ -500,8 +500,6 @@ Wire Wire Line
 Wire Wire Line
 	7800 3700 7220 3700
 Wire Wire Line
-	7220 3800 7800 3800
-Wire Wire Line
 	7800 3900 7220 3900
 Wire Wire Line
 	7220 4000 7800 4000
@@ -863,20 +861,8 @@ Wire Wire Line
 	5000 1450 5850 1450
 Text HLabel 7550 1350 2    50   Output ~ 0
 VBAT
-Text HLabel 7800 4700 2    50   Input ~ 0
-HX711_DATA
-Text HLabel 7800 4800 2    50   Output ~ 0
-HX711_RATE
-Text HLabel 7800 4900 2    50   BiDi ~ 0
-HX711_CLK
 Text Label 6120 6300 1    50   ~ 0
 BUTTON
-Text HLabel 6220 6300 3    50   Output ~ 0
-BOOST_EN
-Text HLabel 6320 6300 3    50   Output ~ 0
-10V_LDO_EN
-Text HLabel 6020 6300 3    50   Input ~ 0
-Vlc
 Wire Wire Line
 	6020 6300 6020 5650
 Wire Wire Line
@@ -893,4 +879,20 @@ Wire Wire Line
 	7220 4800 7800 4800
 Wire Wire Line
 	7800 4700 7220 4700
+Text HLabel 7800 4900 2    50   Output ~ 0
+SHDW_nRF
+Text HLabel 7800 4700 2    50   Output ~ 0
+CS1_nRF
+Text HLabel 7800 4800 2    50   Output ~ 0
+MOSI_nRF
+Text HLabel 7850 3800 2    50   Output ~ 0
+CLK_nRF
+Text HLabel 6220 6300 3    50   Output ~ 0
+CS2_nRF
+Text HLabel 6320 6300 3    50   Output ~ 0
+MISO_nRF
+Text HLabel 6020 6300 3    50   Output ~ 0
+EN_nRF
+Wire Wire Line
+	7220 3800 7850 3800
 $EndSCHEMATC

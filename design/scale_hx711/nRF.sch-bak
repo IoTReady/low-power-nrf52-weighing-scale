@@ -389,7 +389,7 @@ U 1 1 5D1E8E68
 P 6050 1450
 F 0 "SW2" H 6050 1660 50  0000 C CNN
 F 1 "ON/OFF switch" H 5900 1250 50  0000 C CNN
-F 2 "sense_fp:SlideSwitch_1P2T_Straight" H 6050 1450 50  0001 C CNN
+F 2 "Footprint_nrf_scale:Slide Switch SMD 2P2T _6pins" H 6050 1450 50  0001 C CNN
 F 3 "" H 6050 1450 50  0001 C CNN
 	1    6050 1450
 	1    0    0    1   
@@ -422,7 +422,7 @@ U 1 1 5D8500C4
 P 1900 7075
 F 0 "J2" H 1950 7392 50  0000 C CNN
 F 1 "Conn_02x03_Odd_Even" H 1950 7301 50  0000 C CNN
-F 2 "sense_fp:PinHeader_2x03_P2.54mm_Vertical" H 1900 7075 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 1900 7075 50  0001 C CNN
 F 3 "~" H 1900 7075 50  0001 C CNN
 	1    1900 7075
 	1    0    0    -1  
@@ -449,7 +449,7 @@ U 1 1 5E71D3F6
 P 9160 2640
 F 0 "SW1" H 9160 2765 50  0000 C CNN
 F 1 "SW_SPST" H 9160 2540 50  0000 C CNN
-F 2 "sense_fp:SW_PUSH_6mm" H 9160 2640 50  0001 C CNN
+F 2 "Footprint_nrf_scale:SMD Tactile Switch_3x6x2.5mm" H 9160 2640 50  0001 C CNN
 F 3 "" H 9160 2640 50  0001 C CNN
 	1    9160 2640
 	1    0    0    -1  
@@ -526,7 +526,7 @@ U 1 1 5E71D413
 P 5000 1800
 F 0 "BT1" H 5118 1896 50  0000 L CNN
 F 1 "Battery_Cell" H 5118 1805 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" V 5000 1860 50  0001 C CNN
+F 2 "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical" V 5000 1860 50  0001 C CNN
 F 3 "" V 5000 1860 50  0001 C CNN
 	1    5000 1800
 	1    0    0    -1  
@@ -863,14 +863,34 @@ Wire Wire Line
 	5000 1450 5850 1450
 Text HLabel 7550 1350 2    50   Output ~ 0
 VBAT
-Text HLabel 8700 4000 2    50   Input ~ 0
+Text HLabel 7800 4700 2    50   Input ~ 0
 HX711_DATA
-Text HLabel 8700 4200 2    50   Output ~ 0
+Text HLabel 7800 4800 2    50   Output ~ 0
 HX711_RATE
-Text HLabel 8700 4400 2    50   BiDi ~ 0
+Text HLabel 7800 4900 2    50   BiDi ~ 0
 HX711_CLK
-Wire Wire Line
-	8750 4650 9300 4650
-Text Label 8750 4650 0    50   ~ 0
+Text Label 6120 6300 1    50   ~ 0
 BUTTON
+Text HLabel 6220 6300 3    50   Output ~ 0
+BOOST_EN
+Text HLabel 6320 6300 3    50   Output ~ 0
+10V_LDO_EN
+Text HLabel 6020 6300 3    50   Input ~ 0
+Vlc
+Wire Wire Line
+	6020 6300 6020 5650
+Wire Wire Line
+	6120 5650 6120 6300
+NoConn ~ 6420 5650
+NoConn ~ 6520 5650
+Wire Wire Line
+	6220 6300 6220 5650
+Wire Wire Line
+	6320 5650 6320 6300
+Wire Wire Line
+	7800 4900 7220 4900
+Wire Wire Line
+	7220 4800 7800 4800
+Wire Wire Line
+	7800 4700 7220 4700
 $EndSCHEMATC

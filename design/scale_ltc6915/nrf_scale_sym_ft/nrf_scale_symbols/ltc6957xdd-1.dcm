@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTC6957xDD-1
+D Low Phase Noise, Dual Output Buffer/Driver/Logic Converter, LVPECL, DFN-12
+K LTC clock converter
+F https://www.analog.com/media/en/technical-documentation/data-sheets/6957fb.pdf
+$ENDCMP
+#
+#End Doc Library
