@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 16)
+    (drawings 17)
     (tracks 91)
     (zones 0)
     (modules 22)
@@ -126,7 +126,7 @@
     (descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x01 2.54mm single row")
     (path /5E6C3294)
-    (fp_text reference TP1 (at -0.1 -2.85 180) (layer F.SilkS)
+    (fp_text reference GND (at -0.1 -2.85 180) (layer F.SilkS)
       (effects (font (size 0.6 0.6) (thickness 0.13)))
     )
     (fp_text value Test_Point (at 0 2.33 90) (layer F.Fab)
@@ -990,6 +990,9 @@
     )
   )
 
+  (gr_text "TPS92515 LED Driver" (at 131 79.2) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.2)))
+  )
   (gr_text LED- (at 112.6 79.1) (layer F.SilkS) (tstamp 5E63074C)
     (effects (font (size 0.8 0.8) (thickness 0.15)))
   )
@@ -1594,6 +1597,14 @@
     (polygon
       (pts
         (xy 138.4 89.4) (xy 135.6 89.4) (xy 135.6 85.2) (xy 138.4 85.2)
+      )
+    )
+    (filled_polygon
+      (pts
+        (xy 138.196119 85.338662) (xy 138.235215 85.364785) (xy 138.261338 85.403881) (xy 138.273 85.462509) (xy 138.273 89.137491)
+        (xy 138.261338 89.196119) (xy 138.235215 89.235215) (xy 138.196119 89.261338) (xy 138.137491 89.273) (xy 135.862509 89.273)
+        (xy 135.803881 89.261338) (xy 135.764785 89.235215) (xy 135.738662 89.196119) (xy 135.727 89.137491) (xy 135.727 85.958651)
+        (xy 135.811138 85.832729) (xy 135.889159 85.644371) (xy 135.928933 85.444412) (xy 135.928933 85.327) (xy 138.137491 85.327)
       )
     )
   )
