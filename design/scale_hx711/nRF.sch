@@ -205,23 +205,23 @@ Text Label 1750 4580 3    60   ~ 0
 LFCLK_XL1
 Text Label 2550 4580 3    60   ~ 0
 LFCLK_XL2
-Text Label 1350 6975 0    50   ~ 0
+Text Label 1450 6975 0    50   ~ 0
 SWDIO
-Text Label 1350 7075 0    50   ~ 0
+Text Label 1450 7075 0    50   ~ 0
 SWDCLK
-Text Label 2550 6975 2    50   ~ 0
+Text Label 1450 7175 0    50   ~ 0
 RX
-Text Label 1350 7175 0    50   ~ 0
+Text Label 2650 7175 2    50   ~ 0
 TX
 $Comp
 L sense:VDD #PWR05
 U 1 1 5E71D407
-P 2700 7025
-F 0 "#PWR05" H 2700 6875 50  0001 C CNN
-F 1 "VDD" H 2700 7175 50  0000 C CNN
-F 2 "" H 2700 7025 60  0000 C CNN
-F 3 "" H 2700 7025 60  0000 C CNN
-	1    2700 7025
+P 2801 6900
+F 0 "#PWR05" H 2801 6750 50  0001 C CNN
+F 1 "VDD" H 2801 7050 50  0000 C CNN
+F 2 "" H 2801 6900 60  0000 C CNN
+F 3 "" H 2801 6900 60  0000 C CNN
+	1    2801 6900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -368,19 +368,19 @@ Text Notes 8760 2445 0    60   ~ 0
 Button for Tare
 Text Notes 1180 3310 0    60   ~ 0
 To use the Internal DC/DC\nregulator we need external\ninductors
-Text Notes 1600 6675 0    60   ~ 0
+Text Notes 1600 6700 0    60   ~ 0
 For programming \nand debugging \nthe nRF controller
 Text Notes 1900 4830 0    60   ~ 0
 Low freq. \nCrystal\n32.768 kHz\n
 $Comp
 L sense:GND #PWR04
 U 1 1 5E71D403
-P 2700 7225
-F 0 "#PWR04" H 2700 6975 50  0001 C CNN
-F 1 "GND" H 2700 7075 50  0000 C CNN
-F 2 "" H 2700 7225 60  0000 C CNN
-F 3 "" H 2700 7225 60  0000 C CNN
-	1    2700 7225
+P 2800 7250
+F 0 "#PWR04" H 2800 7000 50  0001 C CNN
+F 1 "GND" H 2800 7100 50  0000 C CNN
+F 2 "" H 2800 7250 60  0000 C CNN
+F 3 "" H 2800 7250 60  0000 C CNN
+	1    2800 7250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -419,30 +419,22 @@ $EndComp
 $Comp
 L sense:Conn_02x03_Odd_Even J2
 U 1 1 5D8500C4
-P 1900 7075
-F 0 "J2" H 1950 7392 50  0000 C CNN
-F 1 "Conn_02x03_Odd_Even" H 1950 7301 50  0000 C CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 1900 7075 50  0001 C CNN
-F 3 "~" H 1900 7075 50  0001 C CNN
-	1    1900 7075
+P 2000 7075
+F 0 "J2" H 2050 7392 50  0000 C CNN
+F 1 "Conn_02x03_Odd_Even" H 2050 7301 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_2x03_P2.00mm_Vertical" H 2000 7075 50  0001 C CNN
+F 3 "~" H 2000 7075 50  0001 C CNN
+	1    2000 7075
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2700 7225 2700 7175
+	2300 7175 2650 7175
 Wire Wire Line
-	2700 7175 2200 7175
+	1450 6975 1800 6975
 Wire Wire Line
-	2200 7075 2700 7075
+	1800 7075 1450 7075
 Wire Wire Line
-	2700 7075 2700 7025
-Wire Wire Line
-	2200 6975 2550 6975
-Wire Wire Line
-	1350 6975 1700 6975
-Wire Wire Line
-	1700 7075 1350 7075
-Wire Wire Line
-	1350 7175 1700 7175
+	1450 7175 1800 7175
 $Comp
 L sense:SW_SPST SW1
 U 1 1 5E71D3F6
@@ -465,17 +457,6 @@ Text Label 7800 3900 2    50   ~ 0
 RX
 NoConn ~ 7220 3400
 NoConn ~ 7220 3500
-$Comp
-L sense:MDBT42Q U1
-U 1 1 5E71D3F5
-P 6020 4100
-F 0 "U1" H 5105 2700 60  0000 C CNN
-F 1 "MDBT42Q" H 6020 4850 60  0000 C CNN
-F 2 "sense_fp:mdbt42Q" H 5820 5200 60  0001 C CNN
-F 3 "" H 5820 5200 60  0000 C CNN
-	1    6020 4100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5520 5650 5520 6300
 Wire Wire Line
@@ -487,8 +468,6 @@ Wire Wire Line
 	4465 4900 4820 4900
 Wire Wire Line
 	4820 4800 4200 4800
-Wire Wire Line
-	4820 4700 4200 4700
 Wire Wire Line
 	3965 3450 4820 3450
 Wire Wire Line
@@ -863,17 +842,17 @@ Wire Wire Line
 	5000 1450 5850 1450
 Text HLabel 7550 1350 2    50   Output ~ 0
 VBAT
-Text HLabel 7800 4700 2    50   Input ~ 0
+Text HLabel 7800 4800 2    50   Input ~ 0
 HX711_DATA
-Text HLabel 7800 4800 2    50   Output ~ 0
+Text HLabel 7800 4900 2    50   Output ~ 0
 HX711_RATE
-Text HLabel 7800 4900 2    50   BiDi ~ 0
+Text HLabel 7800 4700 2    50   BiDi ~ 0
 HX711_CLK
 Text Label 6120 6300 1    50   ~ 0
 BUTTON
-Text HLabel 6220 6300 3    50   Output ~ 0
-BOOST_EN
 Text HLabel 6320 6300 3    50   Output ~ 0
+BOOST_EN
+Text HLabel 6220 6300 3    50   Output ~ 0
 10V_LDO_EN
 Text HLabel 6020 6300 3    50   Input ~ 0
 Vlc
@@ -884,13 +863,66 @@ Wire Wire Line
 NoConn ~ 6420 5650
 NoConn ~ 6520 5650
 Wire Wire Line
-	6220 6300 6220 5650
-Wire Wire Line
-	6320 5650 6320 6300
-Wire Wire Line
 	7800 4900 7220 4900
 Wire Wire Line
 	7220 4800 7800 4800
 Wire Wire Line
 	7800 4700 7220 4700
+Text HLabel 4240 4400 0    50   Output ~ 0
+EINK_SDIO
+Text HLabel 4230 4300 0    50   Output ~ 0
+EINK_SCLK
+Text HLabel 4240 4200 0    50   Output ~ 0
+EINK_CS
+Text HLabel 4240 4100 0    50   Output ~ 0
+EINK_RST
+Text HLabel 4240 4000 0    50   Input ~ 0
+EINK_BUSY
+Wire Wire Line
+	4240 4000 4820 4000
+Wire Wire Line
+	4820 4200 4240 4200
+Wire Wire Line
+	4820 4400 4240 4400
+Wire Wire Line
+	2801 6900 2801 6975
+Wire Wire Line
+	2801 6975 2300 6975
+Wire Wire Line
+	2800 7250 2800 7075
+Wire Wire Line
+	2800 7075 2300 7075
+NoConn ~ 4820 4600
+NoConn ~ 4820 4500
+Wire Wire Line
+	4820 4100 4240 4100
+Wire Wire Line
+	4230 4300 4820 4300
+$Comp
+L sense:MDBT42Q U1
+U 1 1 5E71D3F5
+P 6020 4100
+F 0 "U1" H 5105 2700 60  0000 C CNN
+F 1 "MDBT42Q" H 6020 4850 60  0000 C CNN
+F 2 "sense_fp:mdbt42Q" H 5820 5200 60  0001 C CNN
+F 3 "" H 5820 5200 60  0000 C CNN
+	1    6020 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4820 4700 4200 4700
+NoConn ~ 5720 5650
+NoConn ~ 5820 5650
+NoConn ~ 5920 5650
+Wire Wire Line
+	6220 5650 6220 6300
+Wire Wire Line
+	6320 5650 6320 6300
+NoConn ~ 7220 4600
+NoConn ~ 7220 4500
+NoConn ~ 7220 4400
+NoConn ~ 7220 4300
+NoConn ~ 7220 4200
+NoConn ~ 7220 4100
+NoConn ~ 7220 3600
 $EndSCHEMATC
