@@ -918,11 +918,50 @@ Wire Wire Line
 	6220 5650 6220 6300
 Wire Wire Line
 	6320 5650 6320 6300
-NoConn ~ 7220 4600
-NoConn ~ 7220 4500
-NoConn ~ 7220 4400
-NoConn ~ 7220 4300
 NoConn ~ 7220 4200
 NoConn ~ 7220 4100
 NoConn ~ 7220 3600
+$Comp
+L Connector_Generic:Conn_01x04 J4
+U 1 1 5E6691E5
+P 10400 4450
+F 0 "J4" H 10480 4442 50  0000 L CNN
+F 1 "Conn_01x04" H 10480 4351 50  0000 L CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" H 10400 4450 50  0001 C CNN
+F 3 "~" H 10400 4450 50  0001 C CNN
+	1    10400 4450
+	1    0    0    -1  
+$EndComp
+Text Label 9900 4350 0    50   ~ 0
+GPIO0
+Text Label 9900 4450 0    50   ~ 0
+GPIO1
+Text Label 9900 4550 0    50   ~ 0
+GPIO2
+Text Label 9900 4650 0    50   ~ 0
+GPIO3
+Wire Wire Line
+	9900 4650 10200 4650
+Wire Wire Line
+	10200 4550 9900 4550
+Wire Wire Line
+	9900 4450 10200 4450
+Wire Wire Line
+	10200 4350 9900 4350
+Text Label 7800 4300 2    50   ~ 0
+GPIO0
+Text Label 7800 4400 2    50   ~ 0
+GPIO1
+Text Label 7800 4500 2    50   ~ 0
+GPIO2
+Text Label 7800 4600 2    50   ~ 0
+GPIO3
+Wire Wire Line
+	7220 4600 7800 4600
+Wire Wire Line
+	7800 4300 7220 4300
+Wire Wire Line
+	7220 4400 7800 4400
+Wire Wire Line
+	7800 4500 7220 4500
 $EndSCHEMATC
