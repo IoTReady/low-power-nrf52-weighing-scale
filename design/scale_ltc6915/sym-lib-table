@@ -2,6 +2,4 @@
   (lib (name sense)(type Legacy)(uri /home/shubham/IoTReady/nrf_scale/weighing_scale_nrf/design/sense_sch/sense.lib)(options "")(descr ""))
   (lib (name scale_ltc6915-cache)(type Legacy)(uri ${KIPRJMOD}/scale_ltc6915-cache.lib)(options "")(descr ""))
   (lib (name scale_ltc6915-rescue)(type Legacy)(uri ${KIPRJMOD}/scale_ltc6915-rescue.lib)(options "")(descr ""))
-  (lib (name scale_hx711-cache)(type Legacy)(uri /home/shubham/IoTReady/nrf_scale/weighing_scale_nrf/design/scale_hx711/scale_hx711-cache.lib)(options "")(descr ""))
-  (lib (name scale_hx711-rescue)(type Legacy)(uri /home/shubham/IoTReady/nrf_scale/weighing_scale_nrf/design/scale_hx711/scale_hx711-rescue.lib)(options "")(descr ""))
 )
