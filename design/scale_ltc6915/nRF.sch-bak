@@ -104,12 +104,12 @@ $EndComp
 $Comp
 L sense:GND #PWR01
 U 1 1 5A8704B4
-P 8770 3120
-F 0 "#PWR01" H 8770 2870 50  0001 C CNN
-F 1 "GND" H 8770 2970 50  0000 C CNN
-F 2 "" H 8770 3120 60  0000 C CNN
-F 3 "" H 8770 3120 60  0000 C CNN
-	1    8770 3120
+P 9320 5800
+F 0 "#PWR01" H 9320 5550 50  0001 C CNN
+F 1 "GND" H 9320 5650 50  0000 C CNN
+F 2 "" H 9320 5800 60  0000 C CNN
+F 3 "" H 9320 5800 60  0000 C CNN
+	1    9320 5800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -364,7 +364,7 @@ Text Notes 5050 2100 0    60   ~ 0
 3.7V Li-Ion\nBattery
 Text Notes 6450 1100 0    60   ~ 0
 Reverse polarity protection
-Text Notes 8760 2445 0    60   ~ 0
+Text Notes 9310 5125 0    60   ~ 0
 Button for Tare
 Text Notes 1180 3310 0    60   ~ 0
 To use the Internal DC/DC\nregulator we need external\ninductors
@@ -397,23 +397,23 @@ $EndComp
 $Comp
 L sense:C C16
 U 1 1 5D422270
-P 9510 2900
-F 0 "C16" H 9360 2995 50  0000 L CNN
-F 1 "0.1nF" H 9265 2820 50  0000 L CNN
-F 2 "sense_fp:C_0402_1005Metric" H 9548 2750 30  0001 C CNN
-F 3 "" H 9510 2900 60  0000 C CNN
-	1    9510 2900
+P 10060 5580
+F 0 "C16" H 9910 5675 50  0000 L CNN
+F 1 "0.1nF" H 9815 5500 50  0000 L CNN
+F 2 "sense_fp:C_0402_1005Metric" H 10098 5430 30  0001 C CNN
+F 3 "" H 10060 5580 60  0000 C CNN
+	1    10060 5580
 	-1   0    0    1   
 $EndComp
 $Comp
 L sense:GND #PWR032
 U 1 1 5D42FC1A
-P 9510 3110
-F 0 "#PWR032" H 9510 2860 50  0001 C CNN
-F 1 "GND" H 9510 2960 50  0000 C CNN
-F 2 "" H 9510 3110 60  0000 C CNN
-F 3 "" H 9510 3110 60  0000 C CNN
-	1    9510 3110
+P 10060 5790
+F 0 "#PWR032" H 10060 5540 50  0001 C CNN
+F 1 "GND" H 10060 5640 50  0000 C CNN
+F 2 "" H 10060 5790 60  0000 C CNN
+F 3 "" H 10060 5790 60  0000 C CNN
+	1    10060 5790
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -438,12 +438,12 @@ Wire Wire Line
 $Comp
 L sense:SW_SPST SW1
 U 1 1 5E71D3F6
-P 9160 2640
-F 0 "SW1" H 9160 2765 50  0000 C CNN
-F 1 "SW_SPST" H 9160 2540 50  0000 C CNN
-F 2 "Footprint_nrf_scale:SMD Tactile Switch_3x6x2.5mm" H 9160 2640 50  0001 C CNN
-F 3 "" H 9160 2640 50  0001 C CNN
-	1    9160 2640
+P 9710 5320
+F 0 "SW1" H 9710 5445 50  0000 C CNN
+F 1 "SW_SPST" H 9710 5220 50  0000 C CNN
+F 2 "Footprint_nrf_scale:SMD Tactile Switch_3x6x2.5mm" H 9710 5320 50  0001 C CNN
+F 3 "" H 9710 5320 50  0001 C CNN
+	1    9710 5320
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6250 1550
@@ -484,21 +484,21 @@ Wire Wire Line
 	7800 3900 7220 3900
 Wire Wire Line
 	7220 4000 7800 4000
-Text Label 10150 2640 2    50   ~ 0
+Text Label 10700 5320 2    50   ~ 0
 BUTTON
 Wire Wire Line
-	9510 3050 9510 3110
+	10060 5730 10060 5790
 Wire Wire Line
-	8770 3120 8770 2640
+	9320 5800 9320 5320
 Wire Wire Line
-	8770 2640 8960 2640
+	9320 5320 9510 5320
 Wire Wire Line
-	9360 2640 9510 2640
+	9910 5320 10060 5320
 Wire Wire Line
-	9510 2750 9510 2640
-Connection ~ 9510 2640
+	10060 5430 10060 5320
+Connection ~ 10060 5320
 Wire Wire Line
-	9510 2640 10150 2640
+	10060 5320 10700 5320
 $Comp
 L sense:Battery_Cell BT1
 U 1 1 5E71D413
@@ -526,7 +526,7 @@ Wire Wire Line
 Text Label 7550 1350 2    50   ~ 0
 VBAT
 $Comp
-L scale_ltc6915.pro-rescue:TLV70013_SOT23-5-Regulator_Linear U?
+L scale_ltc6915-rescue:TLV70013_SOT23-5-Regulator_Linear U?
 U 1 1 5E60E4CD
 P 9300 1450
 AR Path="/5E60E4CD" Ref="U?"  Part="1" 
@@ -842,14 +842,12 @@ Wire Wire Line
 	5000 1450 5850 1450
 Text HLabel 7550 1350 2    50   Output ~ 0
 VBAT
-Text Label 6120 6300 1    50   ~ 0
+Text Label 7800 4600 2    50   ~ 0
 BUTTON
 Wire Wire Line
-	6020 6300 6020 5650
+	6220 6300 6220 5650
 Wire Wire Line
-	6120 5650 6120 6300
-NoConn ~ 6420 5650
-NoConn ~ 6520 5650
+	6320 5650 6320 6300
 Wire Wire Line
 	7800 4900 7220 4900
 Wire Wire Line
@@ -901,44 +899,44 @@ Wire Wire Line
 	4820 4700 4200 4700
 NoConn ~ 5720 5650
 Wire Wire Line
-	6220 5650 6220 6300
+	6420 5650 6420 6300
 Wire Wire Line
-	6320 5650 6320 6300
+	6520 5650 6520 6300
 NoConn ~ 7220 3600
 $Comp
 L Connector_Generic:Conn_01x04 J4
 U 1 1 5E6691E5
-P 10400 4450
-F 0 "J4" H 10480 4442 50  0000 L CNN
-F 1 "Conn_01x04" H 10480 4351 50  0000 L CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" H 10400 4450 50  0001 C CNN
-F 3 "~" H 10400 4450 50  0001 C CNN
-	1    10400 4450
+P 10360 4200
+F 0 "J4" H 10440 4192 50  0000 L CNN
+F 1 "Conn_01x04" H 10440 4101 50  0000 L CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" H 10360 4200 50  0001 C CNN
+F 3 "~" H 10360 4200 50  0001 C CNN
+	1    10360 4200
 	1    0    0    -1  
 $EndComp
-Text Label 9900 4350 0    50   ~ 0
+Text Label 9860 4100 0    50   ~ 0
 GPIO0
-Text Label 9900 4450 0    50   ~ 0
+Text Label 9860 4200 0    50   ~ 0
 GPIO1
-Text Label 9900 4550 0    50   ~ 0
+Text Label 9860 4300 0    50   ~ 0
 GPIO2
-Text Label 9900 4650 0    50   ~ 0
+Text Label 9860 4400 0    50   ~ 0
 GPIO3
 Wire Wire Line
-	9900 4650 10200 4650
+	9860 4400 10160 4400
 Wire Wire Line
-	10200 4550 9900 4550
+	10160 4300 9860 4300
 Wire Wire Line
-	9900 4450 10200 4450
+	9860 4200 10160 4200
 Wire Wire Line
-	10200 4350 9900 4350
-Text Label 7800 4100 2    50   ~ 0
+	10160 4100 9860 4100
+Text Label 7750 5380 2    50   ~ 0
 GPIO0
-Text Label 7800 4200 2    50   ~ 0
+Text Label 8000 5370 2    50   ~ 0
 GPIO1
-Text Label 7800 4300 2    50   ~ 0
+Text Label 8330 5320 2    50   ~ 0
 GPIO2
-Text Label 7800 4400 2    50   ~ 0
+Text Label 8640 5350 2    50   ~ 0
 GPIO3
 Wire Wire Line
 	7220 4400 7800 4400
@@ -948,32 +946,108 @@ Wire Wire Line
 	7220 4200 7800 4200
 Wire Wire Line
 	7800 4300 7220 4300
-Text HLabel 5920 6300 3    50   Output ~ 0
-BOOST_EN
-Text HLabel 5820 6300 3    50   Output ~ 0
-10V_LDO_EN
-Text HLabel 6020 6300 3    50   Input ~ 0
-Vlc
-Text HLabel 7800 4700 2    50   Output ~ 0
-SHDW_nRF
-Text HLabel 7800 4800 2    50   Output ~ 0
-CS1_nRF
-Text HLabel 6220 6300 3    50   Output ~ 0
-MOSI_nRF
-Text HLabel 7800 4900 2    50   Output ~ 0
-CLK_nRF
-Text HLabel 7800 4500 2    50   Output ~ 0
-CS2_nRF
-Text HLabel 7800 4600 2    50   Output ~ 0
-MISO_nRF
 Text HLabel 6320 6300 3    50   Output ~ 0
+BOOST_EN
+Text HLabel 6420 6300 3    50   Output ~ 0
+10V_LDO_EN
+Text HLabel 5920 6300 3    50   Input ~ 0
+Vlc
+Text HLabel 7800 4400 2    50   Output ~ 0
+SHDW_nRF
+Text HLabel 7800 4300 2    50   Output ~ 0
+CS1_nRF
+Text HLabel 7800 4200 2    50   Output ~ 0
+MOSI_nRF
+Text HLabel 7800 4100 2    50   Output ~ 0
+CLK_nRF
+Text HLabel 7800 4800 2    50   Output ~ 0
+CS2_nRF
+Text HLabel 7800 4700 2    50   Output ~ 0
+MISO_nRF
+Text HLabel 7800 4500 2    50   Output ~ 0
 EN_nRF
 Wire Wire Line
-	5820 6300 5820 5650
+	6020 6300 6020 5650
 Wire Wire Line
-	5920 5650 5920 6300
+	6120 5650 6120 6300
 Wire Wire Line
 	7800 4500 7220 4500
 Wire Wire Line
 	7220 4600 7800 4600
+Text Label 10440 2110 2    50   ~ 0
+VBAT
+$Comp
+L Device:Q_NMOS_DGS Q3
+U 1 1 5E6E2B83
+P 10340 3310
+F 0 "Q3" H 10544 3356 50  0000 L CNN
+F 1 "AO3400" H 10544 3265 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 10540 3410 50  0001 C CNN
+F 3 "~" H 10340 3310 50  0001 C CNN
+	1    10340 3310
+	1    0    0    -1  
+$EndComp
+$Comp
+L sense:R R10
+U 1 1 5E6E3BA3
+P 10440 2350
+F 0 "R10" V 10340 2350 50  0000 C CNN
+F 1 "10k" V 10440 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10370 2350 50  0001 C CNN
+F 3 "" H 10440 2350 50  0001 C CNN
+	1    10440 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L sense:R R11
+U 1 1 5E6E57D8
+P 10440 2860
+F 0 "R11" V 10340 2860 50  0000 C CNN
+F 1 "10k" V 10440 2860 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10370 2860 50  0001 C CNN
+F 3 "" H 10440 2860 50  0001 C CNN
+	1    10440 2860
+	-1   0    0    1   
+$EndComp
+$Comp
+L sense:GND #PWR0128
+U 1 1 5E6F8C54
+P 10440 3620
+F 0 "#PWR0128" H 10440 3370 50  0001 C CNN
+F 1 "GND" H 10440 3470 50  0000 C CNN
+F 2 "" H 10440 3620 60  0000 C CNN
+F 3 "" H 10440 3620 60  0000 C CNN
+	1    10440 3620
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10440 3620 10440 3510
+Wire Wire Line
+	10440 3010 10440 3110
+Wire Wire Line
+	10440 2500 10440 2600
+Wire Wire Line
+	10440 2110 10440 2200
+Wire Wire Line
+	10140 3310 9750 3310
+Wire Wire Line
+	10440 2600 9750 2600
+Connection ~ 10440 2600
+Wire Wire Line
+	10440 2600 10440 2710
+Text Label 9750 2600 0    50   ~ 0
+BAT_LVL
+Text Label 9750 3310 0    50   ~ 0
+BT_LVL_EN
+Text Label 6020 6300 1    50   ~ 0
+BAT_LVL
+Text Label 6120 6300 1    50   ~ 0
+BT_LVL_EN
+Wire Wire Line
+	5820 6300 5820 5650
+Wire Wire Line
+	5920 5650 5920 6300
+NoConn ~ 5820 6300
+NoConn ~ 6220 6300
+NoConn ~ 6520 6300
 $EndSCHEMATC
