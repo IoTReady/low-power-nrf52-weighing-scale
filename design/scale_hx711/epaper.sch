@@ -407,7 +407,7 @@ EINK_SCLK
 Text HLabel 8500 3100 0    50   Input ~ 0
 EINK_CS
 Text HLabel 8500 3000 0    50   Input ~ 0
-EINK_CS
+EINK_DC
 Text HLabel 8500 2900 0    50   Input ~ 0
 EINK_RST
 Text HLabel 8500 2800 0    50   Output ~ 0

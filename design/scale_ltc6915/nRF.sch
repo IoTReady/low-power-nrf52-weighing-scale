@@ -849,16 +849,14 @@ Wire Wire Line
 Wire Wire Line
 	6320 5650 6320 6300
 Wire Wire Line
-	7800 4900 7220 4900
-Wire Wire Line
 	7220 4800 7800 4800
 Wire Wire Line
 	7800 4700 7220 4700
-Text HLabel 4240 4400 0    50   Output ~ 0
+Text HLabel 4240 4500 0    50   Output ~ 0
 EINK_SDIO
-Text HLabel 4230 4300 0    50   Output ~ 0
+Text HLabel 4230 4400 0    50   Output ~ 0
 EINK_SCLK
-Text HLabel 4240 4200 0    50   Output ~ 0
+Text HLabel 4240 4300 0    50   Output ~ 0
 EINK_CS
 Text HLabel 4240 4100 0    50   Output ~ 0
 EINK_RST
@@ -867,9 +865,9 @@ EINK_BUSY
 Wire Wire Line
 	4240 4000 4820 4000
 Wire Wire Line
-	4820 4200 4240 4200
+	4820 4300 4240 4300
 Wire Wire Line
-	4820 4400 4240 4400
+	4820 4500 4240 4500
 Wire Wire Line
 	2801 6900 2801 6975
 Wire Wire Line
@@ -879,11 +877,10 @@ Wire Wire Line
 Wire Wire Line
 	2800 7075 2300 7075
 NoConn ~ 4820 4600
-NoConn ~ 4820 4500
 Wire Wire Line
 	4820 4100 4240 4100
 Wire Wire Line
-	4230 4300 4820 4300
+	4230 4400 4820 4400
 $Comp
 L sense:MDBT42Q U1
 U 1 1 5E71D3F5
@@ -1034,4 +1031,9 @@ BT_LVL_EN
 Wire Wire Line
 	5920 5650 5920 6300
 NoConn ~ 5820 5650
+NoConn ~ 7220 4900
+Text HLabel 4240 4200 0    50   Output ~ 0
+EINK_DS
+Wire Wire Line
+	4820 4200 4240 4200
 $EndSCHEMATC
