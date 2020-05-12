@@ -25,8 +25,8 @@
  * @{
  */
 
-#ifndef PLATFORM_PCA10040_H_
-#define PLATFORM_PCA10040_H_
+#ifndef PLATFORM_W_SCALE_HX711
+#define PLATFORM_W_SCALE_HX711
 
 /** @anchor pca10040-leds
  * @name LED definitions for PCA10040
@@ -118,7 +118,7 @@
 
 #define BOARD_LFCLKSRC         NRF_CLOCK_LFCLK_Xtal
 
-#endif /* PLATFORM_PCA10040_H_ */
+#endif /* PLATFORM_W_SCALE_HX711 */
 
 /** @} */
 /** @} */

@@ -1,5 +1,5 @@
 
-BOARD           := BOARD_PCA10040
+BOARD           := BOARD_WEIGHING_SCALE_HX711
 SLNO            := 682488513
 BLE_REQD        := BLE_STACK_SUPPORT_REQD
 PINRESET_REQD   := CONFIG_GPIO_AS_PINRESET
@@ -16,7 +16,7 @@ CONFIG_HEADER	:= 0
 SHARED_RESOURCES := 0
 WEIGHING_METHOD := HX_ADC
 	
-SDK_DIR         = ../../SDK_components
+SDK_DIR         = ../../bootloader/components
 DOC_DIR         = ../../doc
 PLATFORM_DIR    = ../../platform
 CODEBASE_DIR    = ../../codebase

@@ -29,6 +29,8 @@
 
 #if defined(BOARD_PCA10040)
   #include "pca10040.h"
+#elif defined(BOARD_WEIGHING_SCALE_HX711)
+  #include "weighing_scale_hx711.h"
 #else
 #error "Board is not defined"
 #endif
