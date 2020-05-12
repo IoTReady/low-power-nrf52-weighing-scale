@@ -1,0 +1,12 @@
+
+This driver gives an abstraction layer for multiple e-paper displays. But,
+functionalities provided by this driver will be limited to print text, and 
+rectangles.
+
+1. Number of lines calculations. 
+Number of pixels per line = (Height of selected font +
+                                    Before each line 4 empty pixels)
+
+Max number of lines = (total pixels / no of pixels per line)
+
+2. Number of characters in line = (total pixel / Width of selected font).

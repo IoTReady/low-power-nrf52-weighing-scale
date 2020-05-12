@@ -1,0 +1,338 @@
+#### To be included at the end of a makefile ####
+
+ifndef BOARD
+${error BOARD not specified}
+endif
+
+ifndef CPU
+${error CPU not specified in board Makefile. Needed for CFLAGS.}
+endif
+
+ifndef SOC_FAMILY
+${error SOC_FAMILY not specified in board Makefile.}
+endif
+
+ifndef SOC_NAME
+${error SOC_NAME not specified in board Makefile.}
+endif
+
+ifndef SOC_VERSION
+${error SOC_VERSION not specified in board Makefile.}
+endif
+
+ifndef SD_USED
+SD_USED    := blank
+endif
+
+#Lower and upper case versions of SoC family, SoC name and SD used
+SOC_FAMILY_LC  = $(shell echo $(SOC_FAMILY) | tr A-Z a-z)
+SOC_FAMILY_UC  = $(shell echo $(SOC_FAMILY) | tr a-z A-Z)
+
+SOC_NAME_LC  = $(shell echo $(SOC_NAME) | tr A-Z a-z)
+SOC_NAME_UC  = $(shell echo $(SOC_NAME) | tr a-z A-Z)
+
+SOC_VERSION_LC  = $(shell echo $(SOC_VERSION) | tr A-Z a-z)
+SOC_VERSION_UC  = $(shell echo $(SOC_VERSION) | tr a-z A-Z)
+
+SD_USED_LC  = $(shell echo $(SD_USED) | tr A-Z a-z)
+SD_USED_UC  = $(shell echo $(SD_USED) | tr a-z A-Z)
+
+GCC_INCLUDE_DIR		:= /usr/local/gcc-arm-none-eabi-6-2017-q2-update/arm-none-eabi/include
+GCC_PREFIX          := /usr/local/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi
+
+CC      := $(GCC_PREFIX)-gcc
+AS      := $(GCC_PREFIX)-as
+AR      := $(GCC_PREFIX)-ar -r
+LD      := $(GCC_PREFIX)-ld
+NM      := $(GCC_PREFIX)-nm
+OBJDUMP := $(GCC_PREFIX)-objdump
+OBJCOPY := $(GCC_PREFIX)-objcopy
+GDB     := $(GCC_PREFIX)-gdb
+SIZE    := $(GCC_PREFIX)-size
+
+MK	:= mkdir -p
+RM	:= rm -rf
+
+ifeq ($(DEBUGGER),JLINK)
+### JLink related stuff ###
+JLINK_DIR           := /opt/SEGGER/JLink
+JLINK_EXE 			= $(JLINK_DIR)/JLinkExe -Speed 4000 -If SWD
+
+ifdef SLNO
+JLINK 				= $(JLINK_EXE) -SelectEmuBySN $(SLNO)
+else
+JLINK 				= $(JLINK_EXE)
+endif
+JLINKGDBSERVER		= $(JLINK_DIR)/JLinkGDBServer
+JLINKDEVICE			= $(SOC_NAME_UC)_$(SOC_VERSION_UC)
+
+### nrfjprog related stuff ###
+NRFJPROG_DIR    = ../../utils/nrfjprog
+ifdef SLNO
+NRFJPROG        = $(NRFJPROG_DIR)/nrfjprog -f $(SOC_FAMILY_LC) -s $(SLNO)
+else
+NRFJPROG        = $(NRFJPROG_DIR)/nrfjprog -f $(SOC_FAMILY_LC)
+endif
+
+endif 	#if Segger JLink is used
+
+
+### NVMC Address defines ###
+NVMC_CONFIG_ADRS	 = 4001E504
+NVMC_ERASEALL_ADRS   = 4001E50C
+
+
+### Folder structure Variables ####
+OUTPUT_NAME     = $(APPLN)
+ifneq ($(SD_USED_LC),blank)
+OUTPUT_FLASHING   = $(APPLN)_$(SD_USED_LC)
+else
+OUTPUT_FLASHING   = $(APPLN)
+endif
+OUTPUT_DIR      = build
+OBJ_DIR         = obj
+
+### Verbosity control. Use  make V=1  to get verbose builds.
+ifeq ($(V),1)
+  Q=
+else
+  Q=@
+endif
+
+# Include directories
+INCLUDEDIRS	+= $(CODEBASE_DIR)/nrf_core
+INCLUDEDIRS	+= $(CODEBASE_DIR)/cmsis/include
+INCLUDEDIRS	+= $(GCC_INCLUDE_DIR)
+
+ifneq ($(SD_USED_LC),blank)
+SOFTDEVICE  = $(SDK_DIR)/softdevice/$(SD_USED_LC)/hex/$(shell ls $(SDK_DIR)/softdevice/$(SD_USED_LC)/hex/*.hex | xargs basename)
+SD_PRESENT  = SOFTDEVICE_PRESENT
+endif
+
+LD_SCRIPT 	= $(SD_USED_LC)_$(SOC_NAME_LC)_$(SOC_VERSION).ld
+
+
+### Source files ###
+# Project and assembly source files
+ifeq ($(SOC_NAME_UC), NRF52810)
+C_SRC  += system_$(SOC_NAME_LC).c
+ASSEMBLY_SRC = gcc_startup_$(SOC_NAME_LC).S
+else
+C_SRC  += system_$(SOC_FAMILY_LC).c
+ASSEMBLY_SRC = gcc_startup_$(SOC_FAMILY_LC).S
+endif
+
+### Compiler related stuff ###
+#Small size, good for cache
+CFLAGS	= -Os
+#Max info for the debugger
+CFLAGS  += -ggdb3
+CFLAGS	+= -mcpu=$(CPU)
+CFLAGS	+= -mthumb
+CFLAGS	+= -mabi=aapcs
+ifdef FPU_FLAG
+CFLAGS	+= $(FPU_FLAG)
+endif
+#Use the GCC extensions to C
+CFLAGS	+= --std=gnu11
+#Give a warning when using the GCC extensions to C
+#CFLAGS  += -pedantic
+CFLAGS	+= -Wall -Werror
+# keep every function in separate section, this allows linker to discard unused ones
+CFLAGS += -ffunction-sections -fdata-sections -fno-strict-aliasing
+CFLAGS += -fno-builtin --short-enums -flto
+#CFLAGS from the application Makefile
+CFLAGS  += $(CFLAGS_APP)
+#CFLAGS from the board Makefile
+CFLAGS  += $(CFLAGS_BOARD)
+ifeq ($(SOC_FAMILY_UC), NRF51)
+CFLAGS	+= -D$(SOC_FAMILY_UC)
+endif
+CFLAGS  += -D$(SOC_NAME_UC)
+CFLAGS  += -D$(SOC_NAME_UC)_$(SOC_VERSION_UC)
+CFLAGS	+= -D$(BOARD)
+ifneq ($(SD_USED_LC),blank)
+CFLAGS  += -D$(SD_PRESENT)
+CFLAGS  += -D$(SD_USED_UC)
+CFLAGS  += -DNRF_SD_BLE_API_VERSION=3 #TODO get from Makefile
+endif
+#TODO remove if not required
+CFLAGS  += -DSWI_DISABLE0 
+CFLAGS	+= $(patsubst %,-I%, $(INCLUDEDIRS))
+
+### Linker related stuff ###
+
+LDDIRS	+= linker
+LDDIRS	+= $(CODEBASE_DIR)/nrf_core
+
+LDFLAGS += -Xlinker
+LDFLAGS += -Map=$(OUTPUT_DIR)/$(OUTPUT_NAME).map
+# use newlib in nano version
+LDFLAGS += --specs=nano.specs
+LDFLAGS += -lc -lnosys
+LDFLAGS += -mcpu=$(CPU) 
+LDFLAGS += -mthumb 
+LDFLAGS += -mabi=aapcs
+ifdef FPU_FLAG
+LDFLAGS	+= $(FPU_FLAG)
+endif
+LDFLAGS += -T$(LD_SCRIPT)
+# let linker to dump unused sections
+LDFLAGS += -Wl,--gc-sections -flto
+LDFLAGS	+= $(patsubst %,-L%, $(LDDIRS))
+#TODO Add linking time optimizations
+
+# Sorting removes duplicates
+BUILD_DIRS := $(sort $(OBJ_DIR) $(OUTPUT_DIR) )
+
+# Make a list of source paths
+C_SRC_DIRS  += $(CODEBASE_DIR)/nrf_core
+
+ASSEMBLY_SRC_DIRS	= $(CODEBASE_DIR)/nrf_core
+
+# Object files
+C_OBJ 			= $(addprefix $(OBJ_DIR)/, $(C_SRC:.c=.o))
+ASSEMBLY_OBJ 	= $(addprefix $(OBJ_DIR)/, $(ASSEMBLY_SRC:.S=.o))
+
+DOXY_EDITS		= INPUT = $(DOC_DIR) $(CODEBASE_DIR) $(PLATFORM_DIR) ..\n
+DOXY_EDITS	   += OUTPUT_DIRECTORY = $(DOC_DIR)/build\n
+DOXY_EDITS	   += LAYOUT_FILE = $(DOC_DIR)/DoxygenLayout.xml\n
+
+# Set source lookup paths
+vpath %.c $(C_SRC_DIRS)
+vpath %.S $(ASSEMBLY_SRC_DIRS)
+
+# Include automatically previously generated dependencies
+-include $(addprefix $(OBJ_DIR)/, $(C_OBJ:.o=.d))
+
+### Rules ###
+# Default build target
+.PHONY : all size clean clean_all
+
+clean_all : clean
+	$(MAKE) all -j
+
+size :
+	$(SIZE) $(OUTPUT_DIR)/$(OUTPUT_NAME).elf
+
+all : $(OUTPUT_DIR)/$(OUTPUT_NAME).bin $(OUTPUT_DIR)/$(OUTPUT_NAME).hex
+
+clean : 
+	$(RM) $(OUTPUT_DIR)/*
+	$(RM) $(OBJ_DIR)/*
+
+$(BUILD_DIRS) : 
+	@echo 
+	@echo "Creating directories"
+	- $(MK) $@
+
+# Create objects from C source files
+$(OBJ_DIR)/%.o : %.c
+	@echo "CC " $<
+	$(Q)$(CC) $(CFLAGS) -M $< -MF "$(@:.o=.d)" -MT $@	
+	$(Q)$(CC) $(CFLAGS) -c -o $@ $<
+
+## Assemble .S files
+$(OBJ_DIR)/%.o : %.S
+	@echo "CC " $<
+	$(Q)$(CC) $(CFLAGS) -c -o $@ $<
+
+## Link C and assembler objects to an .elf file
+$(OUTPUT_DIR)/$(OUTPUT_NAME).elf : $(BUILD_DIRS) $(C_OBJ) $(ASSEMBLY_OBJ)
+	@echo
+	@echo "LD $(OUTPUT_DIR)/$(OUTPUT_NAME).elf" 
+	$(Q)$(CC) $(LDFLAGS) $(C_OBJ) $(ASSEMBLY_OBJ) -o $(OUTPUT_DIR)/$(OUTPUT_NAME).elf
+
+## Create binary .bin file from the .elf file
+$(OUTPUT_DIR)/$(OUTPUT_NAME).bin : $(OUTPUT_DIR)/$(OUTPUT_NAME).elf
+	@echo
+	@echo "Create binary(.bin) file from: " $<
+	$(Q)$(OBJCOPY) -O binary $(OUTPUT_DIR)/$(OUTPUT_NAME).elf $(OUTPUT_DIR)/$(OUTPUT_NAME).bin
+
+## Create binary .hex file from the .elf file
+$(OUTPUT_DIR)/$(OUTPUT_NAME).hex : $(OUTPUT_DIR)/$(OUTPUT_NAME).elf
+	@echo "Create hex file from: " $<
+	$(Q)$(OBJCOPY) -O ihex $(OUTPUT_DIR)/$(OUTPUT_NAME).elf $(OUTPUT_DIR)/$(OUTPUT_NAME).hex
+	@if [ "$(SD_USED_LC)" != "blank" ]; then\
+		echo "Create combined $(SD_USED) and $(APPLN).hex file $(OUTPUT_FLASHING).hex "; \
+		srec_cat $(PWD)/$(SOFTDEVICE) -Intel $(PWD)/$(OUTPUT_DIR)/$(OUTPUT_NAME).hex -Intel -O $(PWD)/$(OUTPUT_DIR)/$(OUTPUT_FLASHING).hex -Intel --line-length=44;		\
+	fi
+
+## Program device
+upload:
+	@if [ "$(DEBUGGER)" = "JLINK" ]; then\
+		$(RM) $(OUTPUT_DIR)/upload.jlink; \
+		echo "device $(JLINKDEVICE)\nw4 $(NVMC_CONFIG_ADRS) 1\nloadfile $(PWD)/$(OUTPUT_DIR)/$(OUTPUT_FLASHING).hex\nr\ng\nqc\n" > $(OUTPUT_DIR)/upload.jlink; \
+		$(JLINK) $(OUTPUT_DIR)/upload.jlink; \
+	elif [ "$(DEBUGGER)" = "BMP" ]; then \
+		$(GDB) -q -ex 'target extended-remote /dev/ttyBmpGdb' -ex 'monitor tpwr enable' -ex 'monitor swdp_scan' -ex 'attach 1' -ex 'load' -ex 'detach' -ex 'quit' -ex 'kill' $(OUTPUT_DIR)/$(OUTPUT_FLASHING).hex; \
+	else\
+		echo "Use the DEBUGGER variable to specify the debugger to be used for uploading"; \
+	fi
+
+# Erase all the flash, UICR and disables the read back protection mechanism if enabled
+recover:
+	@if [ "$(DEBUGGER)" = "JLINK" ]; then\
+		$(NRFJPROG) --recover;\
+	elif [ "$(DEBUGGER)" = "BMP" ]; then \
+		echo "Recover is not possible with Black Magic Probe yet."; \
+	else\
+		echo "Use the DEBUGGER variable to specify the debugger to be used for the recover operation"; \
+	fi
+
+eraseall:
+	@if [ "$(DEBUGGER)" = "JLINK" ]; then\
+		$(NRFJPROG) --eraseall; \
+	elif [ "$(DEBUGGER)" = "BMP" ]; then \
+		$(GDB) -q -ex 'target extended-remote /dev/ttyBmpGdb' -ex 'monitor tpwr enable' -ex 'monitor swdp_scan' -ex 'attach 1' -ex 'mon erase_mass' -ex 'detach' -ex 'quit'; \
+	else\
+		echo "Use the DEBUGGER variable to specify the debugger to be used for the erase all operation"; \
+	fi
+
+pinreset:
+	@if [ "$(DEBUGGER)" = "JLINK" ]; then\
+		$(NRFJPROG) --pinresetenable;\
+		$(NRFJPROG) --pinreset;\
+	elif [ "$(DEBUGGER)" = "BMP" ]; then \
+		echo "Pin reset is not possible with Black Magic Probe yet."; \
+	else\
+		echo "Use the DEBUGGER variable to specify the debugger to be used for the pin reset operation"; \
+	fi
+
+reset:
+	@if [ "$(DEBUGGER)" = "JLINK" ]; then\
+		$(NRFJPROG) --reset;\
+	elif [ "$(DEBUGGER)" = "BMP" ]; then \
+		$(GDB) --batch -q -ex 'target extended-remote /dev/ttyBmpGdb' -ex 'monitor tpwr enable' -ex 'monitor swdp_scan' -ex 'attach 1' -ex 'kill'; \
+	else\
+		echo "Use the DEBUGGER variable to specify the debugger to be used for the reset operation"; \
+	fi
+
+debug:
+	@if [ "$(DEBUGGER)" = "JLINK" ]; then\
+		echo "GDB debug is not supported with JLink yet with this makefile."; \
+	elif [ "$(DEBUGGER)" = "BMP" ]; then \
+		$(GDB) -q -ex 'set confirm no' -ex 'target extended-remote /dev/ttyBmpGdb' -ex 'monitor tpwr enable' -ex 'monitor swdp_scan' -ex 'attach 1' -ex 'load' -ex 'run' $(OUTPUT_DIR)/$(OUTPUT_FLASHING).elf; \
+	else\
+		echo "Use the DEBUGGER variable to specify the debugger to be used for the reset operation"; \
+	fi
+
+powercycle:
+	@if [ "$(DEBUGGER)" = "JLINK" ]; then\
+		echo "GDB debug is not supported with JLink yet with this makefile."; \
+	elif [ "$(DEBUGGER)" = "BMP" ]; then \
+		$(GDB) -q -ex 'target extended-remote /dev/ttyBmpGdb' -ex 'monitor tpwr disable' --eval-command="shell sleep 0.1" -ex 'monitor tpwr enable' -ex 'quit'; \
+	else\
+		echo "Use the DEBUGGER variable to specify the debugger to be used for the reset operation"; \
+	fi
+
+release:
+	nrfutil settings generate --family NRF52810 --application $(OUTPUT_DIR)/$(APPLN).hex --application-version 1 --bootloader-version 1 --bl-settings-version 1 $(OUTPUT_DIR)/bl_settings.hex
+	nrfutil pkg generate --application $(OUTPUT_DIR)/$(APPLN).hex --application-version 1 --hw-version 1 --sd-req "$(SD_ID)" --key-file ../../bootloader/examples/dfu/key_file.pem $(OUTPUT_DIR)/$(APPLN)_bootloader.zip
+	srec_cat $(OUTPUT_DIR)/$(APPLN)_s112.hex --Intel ../../bootloader/examples/dfu/secure_bootloader/pca10040e_ble/armgcc/_build/nrf52810_xxaa_s112.hex --Intel $(OUTPUT_DIR)/bl_settings.hex --Intel -O $(OUTPUT_DIR)/$(APPLN)_bootloader.hex --Intel
+
+doc:
+	( cat $(DOC_DIR)/Appiko.doxyfile ; echo "$(DOXY_EDITS)" ) | doxygen -
+
+.PHONY: upload eraseall recover pinreset doc debug
+
