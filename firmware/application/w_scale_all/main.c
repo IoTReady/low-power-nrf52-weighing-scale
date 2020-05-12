@@ -45,7 +45,7 @@
 
 #define BUTTON_GPIOTE_CH 0
 
-#define BUTTON_USED BUTTON_1
+#define BUTTON_USED BUTTON_PIN
 
 bool g_is_ble_connected = false;
 
@@ -123,26 +123,23 @@ void app_process ()
 
 weight_mod_hw_t dev_config = 
 {
-    .disp_hw.busy_pin = 19,
-    .disp_hw.rst_pin = 20,
-    .disp_hw.dc_pin = 22,
-    .disp_hw.cs_pin = 23,
-    .disp_hw.clk_pin = 24,
-    .disp_hw.din_pin = 25,
-    .disp_hw.dout_pin = 26,
+    .disp_hw.busy_pin = EINK_BUSY,
+    .disp_hw.rst_pin = EINK_RST,
+    .disp_hw.dc_pin = EINK_DC,
+    .disp_hw.cs_pin = EINK_CS,
+    .disp_hw.clk_pin = EINK_SCLK,
+    .disp_hw.din_pin = EINK_MOSI,
+    .disp_hw.dout_pin = EINK_MISO,
     
     
     .charging_sts_pin = 27,
     
-    .wt_scale_hw.hx_clk = 3,
-    .wt_scale_hw.hx_data = 4,
-    .wt_scale_hw.hx_rate = 28,
-    .wt_scale_hw.pwr_boost_en = 29,
-    .wt_scale_hw.pwr_ldo_en = 30,
-    .wt_scale_hw.pwr_vlc = 31,
-    
-        
-        
+    .wt_scale_hw.hx_clk = HX711_CLK,
+    .wt_scale_hw.hx_data = HX711_DATA,
+    .wt_scale_hw.hx_rate = HX711_RATE,
+    .wt_scale_hw.pwr_boost_en = VLC_PIN,
+    .wt_scale_hw.pwr_ldo_en = LDO_EN,
+    .wt_scale_hw.pwr_vlc = BOOST_EN,
         
 };
 
