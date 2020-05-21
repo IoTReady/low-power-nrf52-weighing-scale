@@ -9,19 +9,22 @@
 #include "stdbool.h"
 
 /** Weight in grams */
-typedef uint32_t w_scale_ble_weight_t;
+typedef int32_t w_scale_ble_weight_t;
 
 /** Flag : force OTA */
 typedef bool w_scale_ble_force_ota_t;
 
 /** Software version */
-typedef uint32_t w_scale_ble_sw_ver_t;
+typedef struct
+{
+    uint8_t sw_ver[10];
+}w_scale_ble_sw_ver_t;
 
 /** Flag : set Tare to zero */
 typedef bool w_scale_ble_tare_to_zero_t;
 
-/** Battery voltage */
-typedef uint16_t w_scale_ble_batt_adc_t;
+/** Battery percentage */
+typedef uint8_t w_scale_ble_batt_percent_t;
 
 /** List of Controllers */
 typedef enum
@@ -48,24 +51,17 @@ void w_scale_ble_init (void (*p_ota_flag_update)(w_scale_ble_force_ota_t force_o
  */
 void w_scale_ble_update_adv (w_scale_ble_weight_t adv_weight);
 
-
-/**
- * @brief Function to set controller. (Called once).
- * @param controller Controller that's being used. @ref w_scale_ble_controllers_t.
- */
-void w_scale_ble_set_controller (w_scale_ble_controllers_t controller);
-
 /**
  * @brief Function to set software version (Called once).
  * @param sw_ver Current software version.
  */
-void w_scale_ble_set_sw_ver (w_scale_ble_sw_ver_t sw_ver);
+void w_scale_ble_set_sw_ver (w_scale_ble_sw_ver_t * sw_ver);
 
 /**
  * @brief Function to update the battery voltage (ADC value).
  * @param batt_update ADC reading of battery voltage.
  */
-void w_scale_ble_update_batt_adc (w_scale_ble_batt_adc_t batt_update);
+void w_scale_ble_update_batt_percent (w_scale_ble_batt_percent_t batt_update);
 
 /**
  * @brief Function to update weight.

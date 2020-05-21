@@ -18,9 +18,6 @@
 #include "evt_sd_handler.h"
 #include "string.h"
 
-
-
-
 /**< Interval between advertisement packets (0.5 seconds). */
 #define ADVERTISING_INTERVAL       MSEC_TO_UNITS(500, UNIT_0_625_MS)
 /**< Minimum acceptable connection interval (0.2 seconds). */
@@ -32,13 +29,10 @@
 /**< Connection supervisory timeout (4 seconds). */
 #define CONN_SUP_TIMEOUT           MSEC_TO_UNITS(4000, UNIT_10_MS)
 
-
 #define APP_BLE_CONN_CFG_TAG            1 /**< A tag identifying the SoftDevice BLE configuration. */
 
 /** TODO Update device name */
-#define DEVICE_NAME 'D','e','v',' ','N','a','m','e',' ','H','e','r','e','.','.','.'
-//Dev Name Here..\0
-
+#define DEVICE_NAME 'I','o','T','R',' ','n','R','F','s','c','a','l','e'
 
 #define LOW_8(x) (x & 0xFF)
 #define HIGH_8(x) ((x & 0xFF00) >> 8)
@@ -48,23 +42,19 @@ const uint8_t app_device_name[] = {DEVICE_NAME};
 /** Standard Advertisement data */
 #define APP_ADV_DATA   {                                        \
                        0x02, BLE_GAP_AD_TYPE_FLAGS, BLE_GAP_ADV_FLAGS_LE_ONLY_LIMITED_DISC_MODE,    \
+                       0x07,BLE_GAP_AD_TYPE_MANUFACTURER_SPECIFIC_DATA, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, \
                        sizeof(app_device_name) + 1, BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, DEVICE_NAME,   \
                        0x02, BLE_GAP_AD_TYPE_TX_POWER_LEVEL, /** TODO Update this */0x03, \
-                       0x05, BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE, \
-                       LOW_8(WEIGHT_READ_SERVICE), HIGH_8(WEIGHT_READ_SERVICE),\
-                       LOW_8(SYSTEM_SETTING_SERVICE), HIGH_8(SYSTEM_SETTING_SERVICE),\
                        }
 /** Standard Scan response data */
 #define SCAN_RSP_DATA {                                         \
-                       0x07,BLE_GAP_AD_TYPE_MANUFACTURER_SPECIFIC_DATA, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, \
                        0x05, BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE, \
                        LOW_8(WEIGHT_READ_SERVICE), HIGH_8(WEIGHT_READ_SERVICE),\
                        LOW_8(SYSTEM_SETTING_SERVICE), HIGH_8(SYSTEM_SETTING_SERVICE),\
                        0x05, BLE_GAP_AD_TYPE_SLAVE_CONNECTION_INTERVAL_RANGE, 0x10, 0x00, 0x10, 0x00\
                       }
 
-#define WEIGHT_KG_INDEX 4
-#define WEIGHT__G_INDEX 6
+#define WEIGHT_INDEX 7
 
 uint8_t g_adv_data1[] = APP_ADV_DATA;
 uint8_t g_adv_data2[] = APP_ADV_DATA;
@@ -84,9 +74,6 @@ ble_gatts_char_handles_t h_set_tare;
 ble_gatts_char_handles_t h_read_batt;
 ble_gatts_char_handles_t h_sw_ver;
 ble_gatts_char_handles_t h_controller;
-
-w_scale_ble_controllers_t g_default_controller;
-w_scale_ble_sw_ver_t g_sw_ver;
 
 ble_gap_adv_params_t adv_params;
 
@@ -116,12 +103,6 @@ void service_init ();
  */
 void start_advertisement ();
 
-/**
- * @brief Function to load default values.
- */
-void load_default_val ();
-
-
 void (*p_update_ota_flag) (w_scale_ble_force_ota_t force_ota);
 void (*p_tare_to_zero_set) (w_scale_ble_tare_to_zero_t set_tare);
 void (*p_update_conn_status) (bool conn_status);
@@ -148,7 +129,6 @@ void ble_evt_handler(ble_evt_t * evt)
             h_conn = evt->evt.gap_evt.conn_handle;
             log_printf ("Connected\n");
             p_update_conn_status (true);
-            load_default_val ();
             break;
         }
         case BLE_GAP_EVT_DISCONNECTED:
@@ -215,30 +195,6 @@ void soc_evt_handler(uint32_t evt_id)
 {
     log_printf("soc evt %x\n", evt_id);
 }
-
-void load_default_val ()
-{
-    uint32_t err_code;
-    ble_gatts_value_t val =
-    {
-        .len = sizeof(w_scale_ble_controllers_t),
-        .offset = 0,
-        .p_value = (uint8_t *) &g_default_controller
-    };
-    err_code = sd_ble_gatts_value_set(h_conn,
-            h_controller.value_handle, &val);
-    APP_ERROR_CHECK(err_code);
-    ble_gatts_value_t val1 =
-    {
-        .len = sizeof(w_scale_ble_sw_ver_t),
-        .offset = 0,
-        .p_value = (uint8_t *) &g_sw_ver
-    };
-    err_code = sd_ble_gatts_value_set(h_conn,
-            h_sw_ver.value_handle, &val1);
-    APP_ERROR_CHECK(err_code);
-}
-
 
 void start_advertisement ()
 {
@@ -434,7 +390,7 @@ void service_init ()
             h_setting_service, &char_md, &attr_char_value, &h_set_tare);
     APP_ERROR_CHECK(err_code);
     
-    /**** Create the Get Battery ADC value characteristic *****/
+    /**** Create the Get Battery percent value characteristic *****/
 
     memset(&char_md, 0, sizeof (char_md));
 
@@ -447,7 +403,7 @@ void service_init ()
     char_md.p_sccd_md = NULL;
 
     ble_uuid.type = uuid_type;
-    ble_uuid.uuid = (BATTERY_ADC);
+    ble_uuid.uuid = (BATTERY_PERCENT);
 
     memset(&attr_md, 0, sizeof (attr_md));
 
@@ -462,9 +418,9 @@ void service_init ()
 
     attr_char_value.p_uuid = &ble_uuid;
     attr_char_value.p_attr_md = &attr_md;
-    attr_char_value.init_len = sizeof (w_scale_ble_batt_adc_t);
+    attr_char_value.init_len = sizeof (w_scale_ble_batt_percent_t);
     attr_char_value.init_offs = 0;
-    attr_char_value.max_len = sizeof (w_scale_ble_batt_adc_t);
+    attr_char_value.max_len = sizeof (w_scale_ble_batt_percent_t);
     attr_char_value.p_value = NULL;
 
     err_code = sd_ble_gatts_characteristic_add(
@@ -508,6 +464,18 @@ void service_init ()
             h_setting_service, &char_md, &attr_char_value, &h_controller);
     APP_ERROR_CHECK(err_code);
     
+    uint8_t nrf_controller = W_SCALE_BLE_CONTROL_NRF52;
+    ble_gatts_value_t controller_char_val =
+    {
+        .len = sizeof(nrf_controller),
+        .offset = 0,
+        .p_value = &nrf_controller
+    };
+
+    //Set the controller characteristic as 1 to specify nRF
+    err_code = sd_ble_gatts_value_set(BLE_CONN_HANDLE_INVALID,
+            h_controller.value_handle, &controller_char_val);
+    APP_ERROR_CHECK(err_code);
 }
 
 void stack_init ()
@@ -625,23 +593,13 @@ void w_scale_ble_update_adv (w_scale_ble_weight_t adv_weight)
 {
     uint32_t err_code;
     
-    uint16_t l_kgs = 0;
-    uint16_t l_grams = 0;
-   
-    l_kgs = adv_weight / 1000;
-    l_grams = adv_weight % 1000;
-    
     static bool adv1 = false;
       
     ble_gap_adv_data_t adv_payload;
     if (adv1)
     {
 
-        g_scan_rsp_data1[WEIGHT_KG_INDEX] = (l_kgs & 0xFF);
-        g_scan_rsp_data1[WEIGHT_KG_INDEX+1] = ((l_kgs & 0xFF00) >> 8);
-
-        g_scan_rsp_data1[WEIGHT__G_INDEX] = (l_grams & 0xFF);
-        g_scan_rsp_data1[WEIGHT__G_INDEX+1] = ((l_grams & 0xFF00) >> 8);
+        memcpy(g_adv_data1+WEIGHT_INDEX, &adv_weight, sizeof(adv_weight));
 
         adv_payload.adv_data.p_data = g_adv_data1;
         adv_payload.adv_data.len = sizeof (g_adv_data1);
@@ -652,12 +610,7 @@ void w_scale_ble_update_adv (w_scale_ble_weight_t adv_weight)
     }
     else
     {
-
-        g_scan_rsp_data2[WEIGHT_KG_INDEX] = (l_kgs & 0xFF);
-        g_scan_rsp_data2[WEIGHT_KG_INDEX+1] = ((l_kgs & 0xFF00) >> 8);
-
-        g_scan_rsp_data2[WEIGHT__G_INDEX] = (l_grams & 0xFF);
-        g_scan_rsp_data2[WEIGHT__G_INDEX+1] = ((l_grams & 0xFF00) >> 8);
+        memcpy(g_adv_data2+WEIGHT_INDEX, &adv_weight, sizeof(adv_weight));
 
         adv_payload.adv_data.p_data = g_adv_data2;
         adv_payload.adv_data.len = sizeof (g_adv_data2);
@@ -674,22 +627,27 @@ void w_scale_ble_update_adv (w_scale_ble_weight_t adv_weight)
 
 }
 
-void w_scale_ble_set_controller (w_scale_ble_controllers_t controller)
+void w_scale_ble_set_sw_ver (w_scale_ble_sw_ver_t * sw_version)
 {
-    g_default_controller = controller;
+    uint32_t err_code;
+
+    ble_gatts_value_t val_sw_version =
+    {
+        .len = sizeof(w_scale_ble_sw_ver_t),
+        .offset = 0,
+        .p_value = (uint8_t *) (sw_version->sw_ver),
+    };
+    err_code = sd_ble_gatts_value_set(BLE_CONN_HANDLE_INVALID,
+            h_sw_ver.value_handle, &val_sw_version);
+    APP_ERROR_CHECK(err_code);
 }
 
-void w_scale_ble_set_sw_ver (w_scale_ble_sw_ver_t sw_ver)
-{
-    g_sw_ver = sw_ver;
-}
-
-void w_scale_ble_update_batt_adc (w_scale_ble_batt_adc_t batt_update)
+void w_scale_ble_update_batt_percent (w_scale_ble_batt_percent_t batt_update)
 {
     uint32_t err_code;
     ble_gatts_value_t val =
     {
-        .len = sizeof(w_scale_ble_batt_adc_t),
+        .len = sizeof(w_scale_ble_batt_percent_t),
         .offset = 0,
         .p_value = (uint8_t *) &batt_update
     };
