@@ -28,19 +28,13 @@
 #ifndef PLATFORM_W_SCALE_HX711
 #define PLATFORM_W_SCALE_HX711
 
-/** @anchor pca10040-leds
- * @name LED definitions for PCA10040
+/** @anchor general-gpio
+ * @name General GPIO definitions
  * @{*/
 #define GPIO_0          (17)
 #define GPIO_1          (16)
 #define GPIO_2          (15)
 #define GPIO_3          (14)
-
-#define LED_1           (GPIO_1)
-#define LED_2           (GPIO_2)
-
-#define LED_RED         (LED_1)
-#define LED_GREEN       (LED_2)
 /** The output level at which the LEDs shine */
 #define LEDS_ACTIVE_STATE (0)
 /** @} */
@@ -69,14 +63,23 @@
 /** @anchor e_ink_paper_interface 
  * @name E-Ink Paper display Interface
  * @{*/
+#define EINK_BUSY       (GPIO_0)
+#define EINK_RST        (GPIO_1)
+#define EINK_DC         (GPIO_2)
+#define EINK_CS         (GPIO_3)
+#define EINK_SCLK       (TX_PIN_NUMBER)
+#define EINK_MOSI       (RX_PIN_NUMBER)
+#define EINK_MISO       (31) //Unused
+/** @} */
+
+#if 0
 #define EINK_BUSY       (25)
 #define EINK_RST        (26)
 #define EINK_DC         (27)
 #define EINK_CS         (28)
 #define EINK_SCLK       (29)
 #define EINK_MOSI       (30)
-#define EINK_MISO       (31) //Unused
-/** @} */
+#endif
 
 /** @anchor hx711_interface 
  * @name HX711 Interface
@@ -93,10 +96,9 @@
  * @name Battery Level
  * @{*/
 #define BT_LV           (5)
+#define BT_LV_ANALOG    (ANALOG_PIN_5)
 #define BT_LV_EN        (10)
 /** @} */
-
-
 
 ///Bool define if the circuitry is present for the internal DC-DC of nRF52
 #define DC_DC_CIRCUITRY     true
