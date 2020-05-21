@@ -328,7 +328,7 @@ powercycle:
 
 release:
 	nrfutil settings generate --family NRF52810 --application $(OUTPUT_DIR)/$(APPLN).hex --application-version 1 --bootloader-version 1 --bl-settings-version 1 $(OUTPUT_DIR)/bl_settings.hex
-	nrfutil pkg generate --application $(OUTPUT_DIR)/$(APPLN).hex --application-version 1 --hw-version 1 --sd-req "$(SD_ID)" --key-file ../../bootloader/examples/dfu/key_file.pem $(OUTPUT_DIR)/$(APPLN)_bootloader.zip
+	nrfutil pkg generate --application $(OUTPUT_DIR)/$(APPLN).hex --application-version 1 --hw-version $(DFU_BOARD_ID) --sd-req "$(SD_ID)" --key-file ../../bootloader/examples/dfu/key_file.pem $(OUTPUT_DIR)/$(APPLN)_bootloader.zip
 	srec_cat $(OUTPUT_DIR)/$(APPLN)_s112.hex --Intel ../../bootloader/examples/dfu/secure_bootloader/pca10040e_ble/armgcc/_build/nrf52810_xxaa_s112.hex --Intel $(OUTPUT_DIR)/bl_settings.hex --Intel -O $(OUTPUT_DIR)/$(APPLN)_bootloader.hex --Intel
 
 doc:
