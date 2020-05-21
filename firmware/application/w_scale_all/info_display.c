@@ -39,7 +39,7 @@ const uint8_t g_empty_img [(X_DIM_BYTE * Y_DIM_BYTE)];
 
 UG_COLOR g_backg, g_foreg;
 
-uint32_t g_disp_busy;
+volatile bool g_disp_refresh = false;
 
 #define WT_X_POS    2
 #define WT_Y_POS    2
@@ -128,8 +128,6 @@ void set_weight (int32_t wt_10gm)
     {
         UG_FontSelect (&FONT_32X53);
         UG_PutString (WT_X_POS, WT_Y_POS, "ovr.wt\n");
-
-        return;
     }
     else if (wt_10gm >= 0)
     {
@@ -149,10 +147,7 @@ void set_weight (int32_t wt_10gm)
         wt_str[5] = ('0' + (uint8_t)(wt_10gm / 1)); 
         
         UG_FontSelect (&FONT_32X53);
-        log_printf("Weight : %s\n", wt_str);
         UG_PutString (WT_X_POS, WT_Y_POS, wt_str);
-        return;
-        
     }
     else 
     {
@@ -171,8 +166,6 @@ void set_weight (int32_t wt_10gm)
         
         UG_FontSelect (&FONT_32X53);
         UG_PutString (WT_X_POS, WT_Y_POS, wt_str);
-        return;
-    
     }
 }
 
@@ -230,16 +223,17 @@ void set_supply_status (uint8_t status)
  */
 void disp_refresh ()
 {
+    g_disp_refresh = true;
     EPD_1IN54_Init (0);
     EPD_1IN54_Clear ();
-    EPD_1IN54_Display ((uint8_t *)g_empty_img);
+    // EPD_1IN54_Display ((uint8_t *)g_empty_img);
     EPD_CONF_Delay_ms (1000);
     
     EPD_1IN54_Init (1);
     EPD_1IN54_Clear ();
     
     g_part_refresh_cnt = 0;
-
+    g_disp_refresh = false;
 }
 
 
@@ -249,7 +243,6 @@ void info_display_hw_init (info_display_hw_t * hw)
     
     g_backg = EP1B_WHITE;
     g_foreg = EP1B_BLACK;
-    g_disp_busy = hw->busy_pin;
     
     disp_refresh ();
 
@@ -312,7 +305,7 @@ void info_display_update_fields (uint16_t fields, info_display_data_t * p_new_da
 {
     if ((fields & INFO_DISPLAY_WEIGHT) && is_wt_enable)
     {
-        set_weight (p_new_data->weight_10gm);
+        set_weight (p_new_data->weight_1g/10);
     }
     if ((fields & INFO_DISPLAY_BATTERY) && is_batt_enable)
     {
@@ -326,6 +319,11 @@ void info_display_update_fields (uint16_t fields, info_display_data_t * p_new_da
 
 void info_display_show ()
 {
+    if(g_disp_refresh)
+    {
+        return;
+    }
+
     if (g_part_refresh_cnt < MAX_PART_BEFORE_FULL)
     {
         EPD_1IN54_Display (g_arr_img);
