@@ -34,7 +34,7 @@ typedef enum
 
 typedef struct 
 {
-    int32_t weight_10gm;
+    int32_t weight_1g;
     uint8_t batt_per;
     uint8_t charging_sts;
 }info_display_data_t;
