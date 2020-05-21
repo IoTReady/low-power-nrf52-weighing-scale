@@ -41,16 +41,18 @@
 #include "nrf_util.h"
 #include "hal_gpio.h"
 
-#define MS_TIMER_PROCESS 1000
-
 #define BUTTON_GPIOTE_CH 0
 
 #define BUTTON_USED BUTTON_PIN
 
+w_scale_ble_sw_ver_t sw_vers =
+{
+    .sw_ver = "0.1.0",
+};
+
 bool g_is_ble_connected = false;
 
 void button_handler ();
-
 
 void GPIOTE_IRQHandler (void)
 {
@@ -63,9 +65,6 @@ void GPIOTE_IRQHandler (void)
     }
 
 }
-
-
-
 
 void reset_and_ota ()
 {
@@ -97,23 +96,15 @@ void OTA_flag_update (w_scale_ble_force_ota_t ota)
 
 void tare_set_zero (w_scale_ble_tare_to_zero_t set_zero)
 {
-    if(set_zero)
-    {
-        weight_mod_set_tare ();
-    }
+    weight_mod_set_tare (set_zero);
 }
 
 void app_process ()
 {
-    static uint32_t cnt = 0;
-    if ((cnt++ < 25) && (weight_mod_is_busy () == false))
-    {
-        weight_mod_process ();   
-    }
     if(g_is_ble_connected)
     {
         w_scale_ble_update_weight ((w_scale_ble_weight_t) weight_mod_get_wt ());
-        w_scale_ble_update_batt_adc ((w_scale_ble_batt_adc_t) weight_mod_get_batt_adc ());
+        w_scale_ble_update_batt_percent ((w_scale_ble_batt_percent_t) weight_mod_get_batt_percent ());
     }
     else
     {
@@ -131,16 +122,29 @@ weight_mod_hw_t dev_config =
     .disp_hw.din_pin = EINK_MOSI,
     .disp_hw.dout_pin = EINK_MISO,
     
+    .batt_hw.batt_lv = BT_LV,
+    .batt_hw.batt_lv_en = BT_LV_EN,
+    .batt_hw.batt_chrg_status = GPIO_0,
     
-    .charging_sts_pin = 27,
-    
+    .wt_scale_hw.pwr_boost_en = BOOST_EN,
+    .wt_scale_hw.pwr_ldo_en = LDO_EN,
+    .wt_scale_hw.pwr_vlc = VLC_PIN,
+
+#ifdef HX_ADC
     .wt_scale_hw.hx_clk = HX711_CLK,
     .wt_scale_hw.hx_data = HX711_DATA,
     .wt_scale_hw.hx_rate = HX711_RATE,
-    .wt_scale_hw.pwr_boost_en = VLC_PIN,
-    .wt_scale_hw.pwr_ldo_en = LDO_EN,
-    .wt_scale_hw.pwr_vlc = BOOST_EN,
-        
+#elif defined LTC_ADC
+    .wt_scale_hw.common_clk = AMP_ADC_CLK,
+    .wt_scale_hw.miso = AMP_ADC_MISO,
+    .wt_scale_hw.mosi = AMP_ADC_MOSI,
+    .wt_scale_hw.CS_amp = LTC6915_AMP_CS,
+    .wt_scale_hw.CS_adc = ADS8320_ADC_CS,
+    .wt_scale_hw.SHDN_amp = LTC6915_SHDN,
+    .wt_scale_hw.EN_ref = LM4140_REF_EN,
+#endif
+
+    .callback = app_process,
 };
 
 void leds_init ()
@@ -151,7 +155,7 @@ void leds_init ()
 void button_handler ()
 {
     log_printf("%s\n", __func__);
-    weight_mod_set_tare ();    
+    weight_mod_set_tare (true);
 }
 
 void button_init (app_irq_priority_t irq_priority)
@@ -185,11 +189,11 @@ int main(void)
     ms_timer_init (APP_IRQ_PRIORITY_LOWEST);
     
     log_printf("Hello World from RTT\n");
+    w_scale_ble_init (OTA_flag_update,tare_set_zero,connection_status);
+    w_scale_ble_set_sw_ver(&sw_vers);
+    button_init (APP_IRQ_PRIORITY_LOW);
     weight_mod_init (&dev_config);
     leds_init ();
-    button_init (APP_IRQ_PRIORITY_LOW);
-    w_scale_ble_init (OTA_flag_update,tare_set_zero,connection_status);
-    ms_timer_start (MS_TIMER0, MS_REPEATED_CALL, MS_TIMER_TICKS_MS (MS_TIMER_PROCESS), app_process);
     while (true)
     {
 //        ms_timer_handler ();
