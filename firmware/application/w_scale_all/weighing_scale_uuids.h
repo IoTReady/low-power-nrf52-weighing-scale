@@ -31,8 +31,8 @@
 /** Tare to zero : 0000ee0A-0000-1000-8000-00805f9b34fb */
 #define TARE_TO_ZERO                0xee0a
 
-/** Battery ADC : 0000ee0B-0000-1000-8000-00805f9b34fb */
-#define BATTERY_ADC                 0xee0b
+/** Battery PERCENT : 0000ee0B-0000-1000-8000-00805f9b34fb */
+#define BATTERY_PERCENT             0xee0b
 
 /** Controller Identifier : 0000ee0C-0000-1000-8000-00805f9b34fb */
 #define CONTROLLER_IDEDNTIFIER      0xee0c
