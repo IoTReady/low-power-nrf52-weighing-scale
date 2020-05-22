@@ -140,7 +140,6 @@ void set_weight (int32_t wt_10gm)
         wt_str[1] = chk_blanks (wt_str[1], &blanks);
         wt_10gm %= 1000;
         wt_str[2] = ('0' + (uint8_t)(wt_10gm / 100));
-        wt_str[2] = chk_blanks (wt_str[2], &blanks);
         wt_10gm %= 100;
         wt_str[4] = ('0' + (uint8_t)(wt_10gm / 10));
         wt_10gm %= 10;
@@ -151,16 +150,16 @@ void set_weight (int32_t wt_10gm)
     }
     else 
     {
+        wt_10gm *= -1;
         bool blanks = true;
         char wt_str[] = {'-','K','K','K','.','g', 0x00};
         wt_str[1] = ('0' + (uint8_t)(wt_10gm / 10000));
-        wt_str[1] = chk_blanks (wt_str[0], &blanks);
+        wt_str[1] = chk_blanks (wt_str[1], &blanks);
         wt_10gm %= 10000;
         wt_str[2] = ('0' + (uint8_t)(wt_10gm / 1000));
-        wt_str[2] = chk_blanks (wt_str[0], &blanks);
+        wt_str[2] = chk_blanks (wt_str[2], &blanks);
         wt_10gm %= 1000;
         wt_str[3] = ('0' + (uint8_t)(wt_10gm / 100));
-        wt_str[3] = chk_blanks (wt_str[0], &blanks);
         wt_10gm %= 100;
         wt_str[5] = ('0' + (uint8_t)(wt_10gm / 10));
         
