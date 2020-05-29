@@ -183,12 +183,22 @@ void button_init (app_irq_priority_t irq_priority)
     NVIC_EnableIRQ(GPIOTE_IRQn);
 }
 
+void boot_pwr_config(void)
+{
+//Enable the DCDC converter if the board supports it
+#if DC_DC_CIRCUITRY == true  //Defined in the board header file
+    NRF_POWER->DCDCEN = POWER_DCDCEN_DCDCEN_Enabled << POWER_DCDCEN_DCDCEN_Pos;
+#endif
+    NRF_POWER->TASKS_LOWPWR = 1;
+}
+
 int main(void)
 {
-    lfclk_init (LFCLK_SRC_Xtal);
+    log_printf("Hello World from RTT\n");
+    lfclk_init (BOARD_LFCLKSRC);
+    boot_pwr_config();
     ms_timer_init (APP_IRQ_PRIORITY_LOWEST);
     
-    log_printf("Hello World from RTT\n");
     w_scale_ble_init (OTA_flag_update,tare_set_zero,connection_status);
     w_scale_ble_set_sw_ver(&sw_vers);
     button_init (APP_IRQ_PRIORITY_LOW);
@@ -196,7 +206,6 @@ int main(void)
     leds_init ();
     while (true)
     {
-//        ms_timer_handler ();
         __WFI();
     }
 }
