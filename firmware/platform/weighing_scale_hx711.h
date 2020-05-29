@@ -118,7 +118,7 @@
                                     .rc_temp_ctiv  = 0,                                \
                                     .accuracy = NRF_CLOCK_LF_ACCURACY_20_PPM}
 
-#define BOARD_LFCLKSRC         NRF_CLOCK_LFCLK_Xtal
+#define BOARD_LFCLKSRC         LFCLK_SRC_Xtal
 
 #endif /* PLATFORM_W_SCALE_HX711 */
 
