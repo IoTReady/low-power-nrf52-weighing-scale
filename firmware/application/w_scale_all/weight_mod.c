@@ -22,7 +22,7 @@
 #define SAMPLER_WAKE_TIME_MS  (60)
 #elif defined LTC_ADC
 #define EXTERNAL_ADC_RES 16
-#define INSTR_AMP_GAIN 128
+#define INSTR_AMP_GAIN (0xFF)
 #define ZERO_READING (140000-2000)
 #define KG_READING (35600)
 #define SAMPLER_WAKE_TIME_MS  (10)
@@ -107,7 +107,7 @@ void update_disp_data ()
     info_display_update_fields (INFO_DISPLAY_ALL, &l_data);
     info_display_show ();
 
-    log_printf("weight %d, batt %d \n", get_tare_wt(), convert_mv_to_per());
+    log_printf("weight %x, batt %d \n", get_tare_wt(), convert_mv_to_per());
 }
 
 
@@ -194,14 +194,14 @@ void sampler_init ()
         l_spi_init.miso_pin = g_hw.wt_scale_hw.miso;
         l_spi_init.mosi_pin = g_hw.wt_scale_hw.mosi;
         l_spi_init.byte_order = HAL_SPIM_MSB_FIRST;
-        l_spi_init.freq = HAL_SPIM_FREQ_2M;
+        l_spi_init.freq = HAL_SPIM_FREQ_1M;
         l_spi_init.spi_mode = HAL_SPIM_SPI_MODE0;
         l_spi_init.irq_priority = APP_IRQ_PRIORITY_LOW;
     }
     hal_spim_deinit ();
     hal_spim_init (&l_spi_init);
     hal_spim_tx_rx (&gain, 1, NULL, 0);
-    hal_spim_is_busy ();
+    while (hal_spim_is_busy ()) {}
     hal_spim_deinit ();
 
 }
@@ -228,15 +228,15 @@ void get_load_cell_value ()
         l_spi_init.miso_pin = g_hw.wt_scale_hw.miso;
         l_spi_init.mosi_pin = g_hw.wt_scale_hw.mosi;
         l_spi_init.byte_order = HAL_SPIM_MSB_FIRST;
-        l_spi_init.freq = HAL_SPIM_FREQ_2M;
+        l_spi_init.freq = HAL_SPIM_FREQ_1M;
         l_spi_init.spi_mode = HAL_SPIM_SPI_MODE0;
-        l_spi_init.irq_priority = APP_IRQ_PRIORITY_HIGHEST;
+        l_spi_init.irq_priority = APP_IRQ_PRIORITY_LOW;
     }
 
     hal_spim_deinit ();
     hal_spim_init (&l_spi_init);
     hal_spim_tx_rx (NULL, 0, &adc_val, 3);
-    hal_spim_is_busy ();
+    while (hal_spim_is_busy ()) {}
     hal_spim_deinit ();
     
     //TODO to get the ADC value from 3 bytes
@@ -288,6 +288,8 @@ void weight_mod_init (weight_mod_hw_t * init_hw)
 #elif defined LTC_ADC
     hal_gpio_cfg_output (g_hw.wt_scale_hw.EN_ref, 1);
     hal_gpio_cfg_output (g_hw.wt_scale_hw.SHDN_amp, 0);
+    hal_gpio_cfg_output (g_hw.wt_scale_hw.pwr_ldo_en, 1);
+    hal_gpio_cfg_output (g_hw.wt_scale_hw.pwr_boost_en, 1);
 
     hal_gpio_cfg_input (g_hw.wt_scale_hw.miso, HAL_GPIO_PULL_UP);
 #endif
