@@ -1,6 +1,8 @@
 # Smart Weighing Scale
 
-Smart Weighing Scale with low current consumption, and hence a high battery backup.
+This project describes a Smart Weighing Scale with low current consumption, and hence a long battery backup.
+
+One of the biggest problems with the use of weighing scales in flexible retail or industrial applications is the need to provide a source of power to a scale. This causes problems such as safety hazards with a corded scale, inflexibility of placement since the location of power sources limits where the scale can be placed, and finally the inability to function when there is a power interruption. This design eliminates these disadvanteges.
 
 ## Block Diagram
 
@@ -10,33 +12,33 @@ Smart Weighing Scale with low current consumption, and hence a high battery back
 The nrf Based Weighing Scale operates on 3.3V, and is powered by a 3.7V Li-ion battery.
 We use a p-MOSFET(IRLML6401) for reverse polarity protection, and a LDO(Low Drop Out) Regulator(TPS7A0233PDBV) to get a stable 3.3V output supply.
 
-![](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem01.jpeg)
-![battery](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem02.jpeg)
+![](./design/scale_hx711/docs/images/schem01.jpeg)
+![battery](./design/scale_hx711/docs/images/schem02.jpeg)
 
 ### Battery Charging
 We use a Li-ion/Li-polymer linear battery charger IC(BQ21040) for charging the battery via a micro-USB oulet. The led indicator stops glowing when the battery is fully charged.
 
 ### nRF Module
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem03.jpeg)
+![image](./design/scale_hx711/docs/images/schem03.jpeg)
 
-We are using MDBT42Q nRF52840 based module as our main MCU and BLE module. It is a very low current consuming and high performance module.
+We are using the MDBT42Q nRF52840 based module as our main MCU and BLE module. It is a very low current consuming and high performance module.
 It needs a 3.3V power supply, and we are using its internal DC/DC regulator which is set by connecting a 10uH and 18nH inductor at DCC and DEC4 pins as shown here. We also use an external 32.768 kHz external crystal. For programming this module we need a Segger JLink Debugger, which is available as a separate device or one could use an on-board debugger from any of the Nordic Dev-boards like PCA400, etc...
 We kept a few GPIOs out for future use or if need to integrate anything else with the weighing scale.
 
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem04.jpeg)
+![image](./design/scale_hx711/docs/images/schem04.jpeg)
 
 To measure the battery level we use this voltage divider circuit and measure it use the on board ADC pins.
 
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem05.jpeg)
+![image](./design/scale_hx711/docs/images/schem05.jpeg)
 
 Tare Button is a push button for using the tare functionality. It basically resets the displayed weight on scale back to zero. The Tare button can also be used to measure multiple items in the same container. Simply add you first item, note the weight, press Tare and you are ready to weigh your next item.
 
 ### ADC Circuit: HX711
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem08.jpeg)
+![image](./design/scale_hx711/docs/images/schem08.jpeg)
 For measuring the weighing scale we use a Load Cell which gives an anlog output, as the weight changes. For high accuracy we use HX711 24-bit ADC chip, which is designed specifically for industrial weighing scales and other industrial control applications.
 
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem06.jpeg)
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem07.jpeg)
+![image](./design/scale_hx711/docs/images/schem06.jpeg)
+![image](./design/scale_hx711/docs/images/schem07.jpeg)
 
 To power the HX711 we need a 5V supply, so we use a Boost regulator(LM2703) to step-up the 3.7V from the battery supply and use an LDO(LP2985-5.0) to get a stable noise free 5V supply for HX711.
 
