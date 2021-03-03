@@ -5,7 +5,8 @@ This project describes a Smart Weighing Scale with low current consumption, and 
 
 One of the biggest problems with the use of weighing scales in flexible retail or industrial applications is the need to provide a source of power to a scale. This causes problems such as safety hazards with a corded scale, inflexibility of placement since the location of power sources limits where the scale can be placed, and finally the inability to function when there is a power interruption. This design eliminates these disadvanteges.
 
-## Block Diagram
+## Firmware
+After cloning or downloading this repo find the firmware documentation here "weighing_scale_nrf/firmware/bootloader/documentation/index.html".
 
 ## Circuit
 
@@ -17,7 +18,7 @@ We use a p-MOSFET(IRLML6401) for reverse polarity protection, and a LDO(Low Drop
 ![battery](./design/scale_hx711/docs/images/schem02.jpeg)
 
 ### Battery Charging
-We use a Li-ion/Li-polymer linear battery charger IC(BQ21040) for charging the battery via a micro-USB oulet. The led indicator stops glowing when the battery is fully charged.
+We use a Li-ion/Li-polymer linear battery charger IC(BQ21040) for charging the battery via a micro-USB outlet. The led indicator stops glowing when the battery is fully charged.
 
 ### nRF Module
 ![image](./design/scale_hx711/docs/images/schem03.jpeg)
@@ -47,7 +48,15 @@ The data from the Load Cell is received via four pins HX711_IN+, HX711_IN-, HX71
 There is no programming needed for the internal registers. All controls to the HX711 are through the pins.
 
 ### E-Ink Display
-![image]()
+![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem09.jpeg)
+![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem10.jpeg)
 
 We decided to go with an E-Ink display as it is very low power consuming, reflection resistant, and was useful for the application we were targeting.
 This is a 1.54" 200x200 pixel [E-Ink display](https://www.e-paper-display.com/products_detail/productId=513.html) from Good Display.
+
+
+## PCB
+This is what the final PCB design looks like:
+![front_pcb](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/pcb1.jpeg)
+![back_pcb](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/pcb2.jpeg)
+![gerber_pcb](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/pcb3.jpeg)
