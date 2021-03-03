@@ -1,4 +1,5 @@
-# Smart Weighing Scale
+@mainpage
+# Smart Weighing Scale  
 
 This project describes a Smart Weighing Scale with low current consumption, and hence a long battery backup.
 
