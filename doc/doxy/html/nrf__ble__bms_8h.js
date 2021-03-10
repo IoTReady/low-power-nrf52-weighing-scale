@@ -1,0 +1,56 @@
+var nrf__ble__bms_8h =
+[
+    [ "NRF_BLE_BMS_ALL_BONDS_BR", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga5d4b40e1ec0956d82add05bec4988f95", null ],
+    [ "NRF_BLE_BMS_ALL_BONDS_BR_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gad028484b09d17c6097a534c3343b5911", null ],
+    [ "NRF_BLE_BMS_ALL_BONDS_BR_LE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga6c91de93276999e094fa131f3348791c", null ],
+    [ "NRF_BLE_BMS_ALL_BONDS_BR_LE_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gaafdf3974abff3eee4ef4b6898e0f5287", null ],
+    [ "NRF_BLE_BMS_ALL_BONDS_LE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga6af1db858bc7919080e30c6eaf2395ae", null ],
+    [ "NRF_BLE_BMS_ALL_BONDS_LE_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga1e8f28084c268f30d7a700bb32baaf2f", null ],
+    [ "NRF_BLE_BMS_ALL_EXCEPT_REQUESTING_DEVICE_BR", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga8b3acabd68a333b596059eca0ce93246", null ],
+    [ "NRF_BLE_BMS_ALL_EXCEPT_REQUESTING_DEVICE_BR_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gab537d404054bd69614383051566b4f9d", null ],
+    [ "NRF_BLE_BMS_ALL_EXCEPT_REQUESTING_DEVICE_BR_LE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gab60f9e22f624394751baa5efaeea25cb", null ],
+    [ "NRF_BLE_BMS_ALL_EXCEPT_REQUESTING_DEVICE_BR_LE_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga3e122b5aa1b6614f115cf89655a43b2d", null ],
+    [ "NRF_BLE_BMS_ALL_EXCEPT_REQUESTING_DEVICE_LE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gaec0e0b4fe72aa6bb0613e93efaf6de6c", null ],
+    [ "NRF_BLE_BMS_ALL_EXCEPT_REQUESTING_DEVICE_LE_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gaf5db55f291d21387e92763748fd2ba39", null ],
+    [ "NRF_BLE_BMS_AUTH_CODE_MAX_LEN", "group__ble__bms.html#gae5b1c58a0939a9c56d1becf849e35b83", null ],
+    [ "NRF_BLE_BMS_CTRLPT_MAX_LEN", "group__ble__bms.html#gaceb0f1a60d4a8222c64ceaf47a7ed90b", null ],
+    [ "NRF_BLE_BMS_CTRLPT_MIN_LEN", "group__ble__bms.html#ga4844b301f01dfe6e9dda43d771390d8a", null ],
+    [ "NRF_BLE_BMS_DEF", "group__ble__bms.html#gaee23069b6013180dfb9c67b79606b458", null ],
+    [ "NRF_BLE_BMS_FEATURE_LEN", "group__ble__bms.html#ga55c9a57a412cfbd75110d484f79619c4", null ],
+    [ "NRF_BLE_BMS_OPCODE_NOT_SUPPORTED", "group__ble__bms.html#ga4fe367467616154bb05ffd4e52429199", null ],
+    [ "NRF_BLE_BMS_OPERATION_FAILED", "group__ble__bms.html#gad713abc46af970108afc0e3d19845bb2", null ],
+    [ "NRF_BLE_BMS_REQUESTING_DEVICE_BR", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gaadc303daa06b68c2e786462bde906676", null ],
+    [ "NRF_BLE_BMS_REQUESTING_DEVICE_BR_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gad2f7505e217957b973ee7c4f282fd275", null ],
+    [ "NRF_BLE_BMS_REQUESTING_DEVICE_BR_LE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga42383fe775ff2eb4e90d89d72294ebfc", null ],
+    [ "NRF_BLE_BMS_REQUESTING_DEVICE_BR_LE_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gab4d419fbe078f650c184423f88abd939", null ],
+    [ "NRF_BLE_BMS_REQUESTING_DEVICE_LE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#ga666c7a62d2bdb9cab3244c22baf5b49b", null ],
+    [ "NRF_BLE_BMS_REQUESTING_DEVICE_LE_AUTH_CODE", "group___n_r_f___b_l_e___b_m_s___f_e_a_t_u_r_e_s.html#gac7184a2f8958d6fca8b0b27fa5e189fc", null ],
+    [ "ble_bms_evt_handler_t", "group__ble__bms.html#ga68d610251c3546fb1c33e00da4d3a6b8", null ],
+    [ "nrf_ble_bms_bond_handler_t", "group__ble__bms.html#ga48d631d4f9ef201e9615fc751dfca53c", null ],
+    [ "nrf_ble_bms_t", "group__ble__bms.html#ga15ac213160c9aaa8a61bd1b40cb314c7", null ],
+    [ "nrf_ble_bms_auth_status_t", "group__ble__bms.html#ga83a33dbd85f1a0400ac64ad3c72482d0", [
+      [ "NRF_BLE_BMS_AUTH_STATUS_ALLOWED", "group__ble__bms.html#gga83a33dbd85f1a0400ac64ad3c72482d0a295ad5e2c533c3a3dcf467632bd265be", null ],
+      [ "NRF_BLE_BMS_AUTH_STATUS_DENIED", "group__ble__bms.html#gga83a33dbd85f1a0400ac64ad3c72482d0ac1ead2bc2a34552a12477d1ddca789de", null ],
+      [ "NRF_BLE_BMS_AUTH_STATUS_PENDING", "group__ble__bms.html#gga83a33dbd85f1a0400ac64ad3c72482d0af3765da42144205e1b321153366b9876", null ]
+    ] ],
+    [ "nrf_ble_bms_evt_type_t", "group__ble__bms.html#ga75d4df825107d5ea08f8509c7cfdf14f", [
+      [ "NRF_BLE_BMS_EVT_AUTH", "group__ble__bms.html#gga75d4df825107d5ea08f8509c7cfdf14fad82415e836d580f35e37e787e21e0030", null ]
+    ] ],
+    [ "nrf_ble_bms_op_t", "group__ble__bms.html#ga73d8f3ae8888d46f7efb83b783246b3d", [
+      [ "NRF_BLE_BMS_OP_DEL_BOND_REQ_DEVICE_BR_LE", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3da52c75cc37067c22dd1d27ad6c34378fd", null ],
+      [ "NRF_BLE_BMS_OP_DEL_BOND_REQ_DEVICE_BR_ONLY", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3da2f0391ddeb2c9bcc731d2cd17d7e32c1", null ],
+      [ "NRF_BLE_BMS_OP_DEL_BOND_REQ_DEVICE_LE_ONLY", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3da5fb7e9a2023711714e0cc33d642ac6f5", null ],
+      [ "NRF_BLE_BMS_OP_DEL_ALL_BONDS_ON_SERVER_BR_LE", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3da201a1c8755fe945ebcf8f63629b9a962", null ],
+      [ "NRF_BLE_BMS_OP_DEL_ALL_BONDS_ON_SERVER_BR_ONLY", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3dadf490a49f30a35627f2c045af2507351", null ],
+      [ "NRF_BLE_BMS_OP_DEL_ALL_BONDS_ON_SERVER_LE_ONLY", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3da6b166bcb96c7d9f6d32fb33d03fe5cce", null ],
+      [ "NRF_BLE_BMS_OP_DEL_ALL_BUT_ACTIVE_BOND_BR_LE", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3da82321d299cb991fcaf8146402044318d", null ],
+      [ "NRF_BLE_BMS_OP_DEL_ALL_BUT_ACTIVE_BOND_BR_ONLY", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3dac97cca30c5eece92986529dcb60d4a22", null ],
+      [ "NRF_BLE_BMS_OP_DEL_ALL_BUT_ACTIVE_BOND_LE_ONLY", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3da0c63765188be4f5d46eb89e08b63a074", null ],
+      [ "NRF_BLE_BMS_OP_NONE", "group__ble__bms.html#gga73d8f3ae8888d46f7efb83b783246b3dacc7768cc2fae185579c920a0089cc89f", null ]
+    ] ],
+    [ "nrf_ble_bms_auth_response", "group__ble__bms.html#gaa162584936e1ae751306f28b9059a49a", null ],
+    [ "nrf_ble_bms_init", "group__ble__bms.html#gabaa56d2ba1fd8a726d0fe964b24239af", null ],
+    [ "nrf_ble_bms_on_ble_evt", "group__ble__bms.html#ga6dd18eb380e5349c6a43c9ad728cae90", null ],
+    [ "nrf_ble_bms_on_qwr_evt", "group__ble__bms.html#gad83bd8fab67c9b21ca183981b830d0de", null ],
+    [ "nrf_ble_bms_set_conn_handle", "group__ble__bms.html#ga89121401f8872852f4ada9faace0d353", null ]
+];

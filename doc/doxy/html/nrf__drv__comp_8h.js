@@ -1,0 +1,25 @@
+var nrf__drv__comp_8h =
+[
+    [ "COMP_CONFIG_TH", "group__nrf__drv__comp.html#ga1c799566a8bfd27c92f0da87e2a42e08", null ],
+    [ "comp_events_handler_t", "group__nrf__drv__comp.html#ga433af477037be8cd6e9259bb79e2db3d", null ],
+    [ "NRF_DRV_COMP_DEFAULT_CONFIG", "group__nrf__drv__comp.html#ga94fbd0f8f2272a0dfa681eaad0ff16bf", null ],
+    [ "nrf_drv_comp_event_address_get", "group__nrf__drv__comp.html#ga15492ebcf86e139ff0bdc825318ed06f", null ],
+    [ "NRF_DRV_COMP_EVT_EN_CROSS_MASK", "group__nrf__drv__comp.html#ga05364489c30d75dc62f23d47e39b118e", null ],
+    [ "NRF_DRV_COMP_EVT_EN_DOWN_MASK", "group__nrf__drv__comp.html#ga61a8ef4b3575a045185ecf23e8a6730e", null ],
+    [ "nrf_drv_comp_evt_en_mask_t", "group__nrf__drv__comp.html#gadb3ccc3a49bfbc11d6f66b9e83d4caab", null ],
+    [ "NRF_DRV_COMP_EVT_EN_READY_MASK", "group__nrf__drv__comp.html#gab6551d1aa3327d6ee1611d45df0612f9", null ],
+    [ "NRF_DRV_COMP_EVT_EN_UP_MASK", "group__nrf__drv__comp.html#ga11a0dda6e19451bcc14fd96aeaf8e6a2", null ],
+    [ "nrf_drv_comp_pin_select", "group__nrf__drv__comp.html#gabcc50eb7f0be5b8538eca50630a3323e", null ],
+    [ "nrf_drv_comp_sample", "group__nrf__drv__comp.html#gaa1f11f2da3231a7d27759ffa8395d06d", null ],
+    [ "nrf_drv_comp_short_mask_t", "group__nrf__drv__comp.html#ga71b7dc9b13496e27cd50c138238e7151", null ],
+    [ "NRF_DRV_COMP_SHORT_STOP_AFTER_CROSS_EVT", "group__nrf__drv__comp.html#ga95e55841a02fc698b737e72ff919223b", null ],
+    [ "NRF_DRV_COMP_SHORT_STOP_AFTER_DOWN_EVT", "group__nrf__drv__comp.html#gab7f62dbf07622aab5b090e65b78e849e", null ],
+    [ "NRF_DRV_COMP_SHORT_STOP_AFTER_UP_EVT", "group__nrf__drv__comp.html#ga99034090ca96f02f3a0452b97d16b618", null ],
+    [ "nrf_drv_comp_start", "group__nrf__drv__comp.html#ga0585e1010a29d975a54d6556fd57e08f", null ],
+    [ "nrf_drv_comp_stop", "group__nrf__drv__comp.html#ga560921c4c2bdfaad030f149caeef3538", null ],
+    [ "nrf_drv_comp_task_address_get", "group__nrf__drv__comp.html#ga9f7987dab36108f784876e9635e7342b", null ],
+    [ "nrf_drv_comp_uninit", "group__nrf__drv__comp.html#ga1089da1ffda72659e567edab51d79656", null ],
+    [ "VOLTAGE_THRESHOLD_TO_INT", "group__nrf__drv__comp.html#ga326a01d8991669c1e425c6e452917073", null ],
+    [ "nrf_drv_comp_config_t", "group__nrf__drv__comp.html#gaa7671485adc012478026504576291b16", null ],
+    [ "nrf_drv_comp_init", "group__nrf__drv__comp.html#ga70d661977ccddd0cb675b92895bf0c08", null ]
+];

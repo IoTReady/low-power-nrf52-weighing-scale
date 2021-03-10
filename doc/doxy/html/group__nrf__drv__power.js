@@ -1,0 +1,28 @@
+var group__nrf__drv__power =
+[
+    [ "NRF_DRV_POWER_MODE_CONSTLAT", "group__nrf__drv__power.html#ga9560e4ea68471b29029383843d76a838", null ],
+    [ "NRF_DRV_POWER_MODE_LOWPWR", "group__nrf__drv__power.html#gaac2d12fe3e81a6a5409a41aa2102e33b", null ],
+    [ "nrf_drv_power_mode_t", "group__nrf__drv__power.html#gaf0214f7738c55d16525ff7e8ca96bb71", null ],
+    [ "nrf_drv_power_pofwarn_event_handler_t", "group__nrf__drv__power.html#gacc6ba9718008714ec50477fb494b2195", null ],
+    [ "nrf_drv_power_sleep_event_handler_t", "group__nrf__drv__power.html#gac307e786f4f8750856d5a02bf6ccddb0", null ],
+    [ "NRF_DRV_POWER_SLEEP_EVT_ENTER", "group__nrf__drv__power.html#ga60f12a844ad7e224c36e2d80d5d73d04", null ],
+    [ "NRF_DRV_POWER_SLEEP_EVT_EXIT", "group__nrf__drv__power.html#gae68b00009a1526355895c24e3ec9377a", null ],
+    [ "nrf_drv_power_sleep_evt_t", "group__nrf__drv__power.html#gaefd70cfe3caa8db0bca910466b7b6efb", null ],
+    [ "nrf_drv_power_usb_event_handler_t", "group__nrf__drv__power.html#gaa8b8feae3527df3e5e6cac9b2bf8edd0", null ],
+    [ "NRF_DRV_POWER_USB_EVT_DETECTED", "group__nrf__drv__power.html#gaa0fdd7a7552a058d08a716baf220442a", null ],
+    [ "NRF_DRV_POWER_USB_EVT_READY", "group__nrf__drv__power.html#gab685fc4f83563ad70a400246fb2a5a40", null ],
+    [ "NRF_DRV_POWER_USB_EVT_REMOVED", "group__nrf__drv__power.html#ga5d02a6fb11c1556672d543df68d313b8", null ],
+    [ "nrf_drv_power_usb_evt_t", "group__nrf__drv__power.html#gab917874da4bb3fd4995b52ab295031f7", null ],
+    [ "NRF_DRV_POWER_USB_STATE_CONNECTED", "group__nrf__drv__power.html#ga200d7d21738ef8ca22fdb64a40e17fda", null ],
+    [ "NRF_DRV_POWER_USB_STATE_DISCONNECTED", "group__nrf__drv__power.html#gaa99e3de63df75d24da90c6e92bf471ea", null ],
+    [ "NRF_DRV_POWER_USB_STATE_READY", "group__nrf__drv__power.html#gaa1732ee4a4cc2fd30c53f318552c45db", null ],
+    [ "nrf_drv_power_usb_state_t", "group__nrf__drv__power.html#ga7a44ac56979a75b0824dc1570294c7ee", null ],
+    [ "nrf_drv_power_usbstatus_get", "group__nrf__drv__power.html#gab49ad4eb449006fb380729ee0c3cedef", null ],
+    [ "nrf_drv_power_config_t", "group__nrf__drv__power.html#ga513889b968dfb07eafc2c2ae2557e0ef", null ],
+    [ "nrf_drv_power_pofwarn_config_t", "group__nrf__drv__power.html#ga0ac15313df77731ab429009d6e8d4373", null ],
+    [ "nrf_drv_power_init", "group__nrf__drv__power.html#ga91e3cbb6a6d81de22bd5d26740b29cca", null ],
+    [ "nrf_drv_power_init_check", "group__nrf__drv__power.html#gaa6f68db0f2990be18acd542c8c9964e7", null ],
+    [ "nrf_drv_power_pof_init", "group__nrf__drv__power.html#gaa395bf2a04a61a941b9cb84cfe783f25", null ],
+    [ "nrf_drv_power_pof_uninit", "group__nrf__drv__power.html#ga9d300bc4949ddab77e3515e30a3009d7", null ],
+    [ "nrf_drv_power_uninit", "group__nrf__drv__power.html#ga5ab1ae4894e13343b57cc130a829f4a7", null ]
+];

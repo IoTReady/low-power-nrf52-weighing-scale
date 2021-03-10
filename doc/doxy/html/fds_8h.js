@@ -1,0 +1,35 @@
+var fds_8h =
+[
+    [ "FDS_FILE_ID_INVALID", "group__fds.html#gade414e234180e1983d44341bce184853", null ],
+    [ "FDS_RECORD_KEY_DIRTY", "group__fds.html#gab855b564bf9f4cac404a71a16aca2906", null ],
+    [ "fds_cb_t", "group__fds.html#ga5d6c35d06f7d73bf0a2458a553f52fea", null ],
+    [ "fds_evt_id_t", "group__fds.html#ga9374d0e6608b9b07940401b407617f8d", [
+      [ "FDS_EVT_INIT", "group__fds.html#gga9374d0e6608b9b07940401b407617f8da4147e2842827ca524ed04dc066ccb25d", null ],
+      [ "FDS_EVT_WRITE", "group__fds.html#gga9374d0e6608b9b07940401b407617f8dadec23fb956d52a05ae1dbb64c68fad2d", null ],
+      [ "FDS_EVT_UPDATE", "group__fds.html#gga9374d0e6608b9b07940401b407617f8dadeaba2d3641cb94365a6a641bacdd367", null ],
+      [ "FDS_EVT_DEL_RECORD", "group__fds.html#gga9374d0e6608b9b07940401b407617f8dacf428d0ef9ce66354b569f2bae9264f0", null ],
+      [ "FDS_EVT_DEL_FILE", "group__fds.html#gga9374d0e6608b9b07940401b407617f8da121a81e149c30cca53b1bd127af9f7e8", null ],
+      [ "FDS_EVT_GC", "group__fds.html#gga9374d0e6608b9b07940401b407617f8dab2b29ea4c2572f34c6f4f164ea7db732", null ]
+    ] ],
+    [ "fds_descriptor_from_rec_id", "group__fds.html#ga68a38771138f19c40d8ef9f61582a155", null ],
+    [ "fds_file_delete", "group__fds.html#ga8b4618e5f1a5a86296db525508f5692a", null ],
+    [ "fds_gc", "group__fds.html#ga90285f376c435c64b352023e725b7ebb", null ],
+    [ "fds_init", "group__fds.html#ga2382947318f107a9c8d08a9a5916ccf4", null ],
+    [ "fds_record_close", "group__fds.html#gaf8d958ecd339e9d2fc3dba40c4503eea", null ],
+    [ "fds_record_delete", "group__fds.html#gaf97cabe15afd74024e4250e931c720cd", null ],
+    [ "fds_record_find", "group__fds.html#ga15112e682cc2c4771945fcf5816e3b1b", null ],
+    [ "fds_record_find_by_key", "group__fds.html#gad5a5ad980e0b2b27a693ca5c0296e9c2", null ],
+    [ "fds_record_find_in_file", "group__fds.html#gaa5bc8844b42493c8d9cdc02d245718fc", null ],
+    [ "fds_record_id_from_desc", "group__fds.html#ga5d56475359f7fd1343d9815dd5b4b310", null ],
+    [ "fds_record_iterate", "group__fds.html#ga71a586b6017690b888ead2a8bd04caee", null ],
+    [ "fds_record_open", "group__fds.html#gab718add23b30b0e663e48a781645879f", null ],
+    [ "fds_record_update", "group__fds.html#gaa71e86ec4e3022063eb08c3411636561", null ],
+    [ "fds_record_write", "group__fds.html#ga0114083241dc287c7145fe113c9adc2c", null ],
+    [ "fds_record_write_reserved", "group__fds.html#ga39ce61a46549ddc2340f1841c0c4aee2", null ],
+    [ "fds_register", "group__fds.html#gadc98fdddd6201988f408116ee0dc4fe5", null ],
+    [ "fds_reserve", "group__fds.html#ga3ee0de6ed4af09fd7d4b3ae7751546ce", null ],
+    [ "fds_reserve_cancel", "group__fds.html#ga59947ed9ab3156d32b284a05783d9b3e", null ],
+    [ "fds_stat", "group__fds.html#ga5d3f04e9755408293408be377f7eeaf9", null ],
+    [ "ANON_UNIONS_DISABLE", "group__fds.html#gae00d56ea54d55148b7a9db7f786dc655", null ],
+    [ "ANON_UNIONS_ENABLE", "group__fds.html#ga4dd225920a1695db74f70a5697ea2cd5", null ]
+];
