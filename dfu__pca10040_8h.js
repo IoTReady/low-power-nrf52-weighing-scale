@@ -1,0 +1,27 @@
+var dfu__pca10040_8h =
+[
+    [ "DFU_BOARD_LFCLKSRC", "group__board__pca10040.html#gafa16e7705e0f309b5a4514a7893ceea4", null ],
+    [ "DFU_BOARD_LFCLKSRC_STRUCT", "group__board__pca10040.html#ga80544dc69e8e4f4ce5217045ac0ad22d", null ],
+    [ "DFU_BUTTON_1", "group__board__pca10040.html#gaa821d458bcd9b2e38ce7bbcf7cd99e20", null ],
+    [ "DFU_BUTTON_2", "group__board__pca10040.html#ga2fb7788df821eccec86c47e5acb0a1fb", null ],
+    [ "DFU_BUTTON_3", "group__board__pca10040.html#ga2fca7ca19b9f9aa0dce7842dea3789a7", null ],
+    [ "DFU_BUTTON_4", "group__board__pca10040.html#gabe5ef9baa49ea2fd3a0e5cab567ec5cd", null ],
+    [ "DFU_BUTTON_PIN", "group__board__pca10040.html#ga5dc1f7337312fd182e2fc0aad833b0f5", null ],
+    [ "DFU_BUTTON_PULL", "group__board__pca10040.html#ga0f0ab3e75299dde51dbaef7018d17c9a", null ],
+    [ "DFU_BUTTONS_ACTIVE_STATE", "group__board__pca10040.html#gadfcf98494f6026caf3f64fa41d6834f2", null ],
+    [ "DFU_CTS_PIN_NUMBER", "group__board__pca10040.html#gaea75d5e7fec09a053b4ba097b8f61dc5", null ],
+    [ "DFU_DC_DC_CIRCUITRY", "group__board__pca10040.html#ga3f1476049700721521b6e043da59303e", null ],
+    [ "DFU_HFCLK_XTAL_PRESENT", "group__board__pca10040.html#gae6ea4f2afa8b91b0a28b97bc1128b270", null ],
+    [ "DFU_LED_1", "group__board__pca10040.html#ga5278a2aff74d3818c5268fbfcc5d5245", null ],
+    [ "DFU_LED_2", "group__board__pca10040.html#gab6deaf557069f76889947123eccadfcd", null ],
+    [ "DFU_LED_3", "group__board__pca10040.html#ga0f6465c605a9cf22103d5db3e657abb0", null ],
+    [ "DFU_LED_4", "group__board__pca10040.html#ga4f05e10043bf18d3396f576934673c91", null ],
+    [ "DFU_LED_GREEN", "group__board__pca10040.html#ga01b93d3c3a33173f692146b85be46174", null ],
+    [ "DFU_LED_RED", "group__board__pca10040.html#gaf16a634d9265d4106e6804458d84c92f", null ],
+    [ "DFU_LEDS_ACTIVE_STATE", "group__board__pca10040.html#gaa44acefcb0e905a981225482178c15bf", null ],
+    [ "DFU_LFCLK_XTAL_PRESENT", "group__board__pca10040.html#ga2e2c18fbd08a6ee324d2da2852356836", null ],
+    [ "DFU_NFC_CIRCUITRY", "group__board__pca10040.html#ga0e018016369e76c1c9bb883019582e27", null ],
+    [ "DFU_RTS_PIN_NUMBER", "group__board__pca10040.html#ga5bf6dbb700b0bf53f6f60a03e64db74f", null ],
+    [ "DFU_RX_PIN_NUMBER", "group__board__pca10040.html#ga95d5983f53eba8fc6690046c536d111c", null ],
+    [ "DFU_TX_PIN_NUMBER", "group__board__pca10040.html#gaf8f4342efe2b5e946b4014f17c345891", null ]
+];

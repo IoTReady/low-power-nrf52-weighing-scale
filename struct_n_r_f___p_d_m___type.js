@@ -1,0 +1,25 @@
+var struct_n_r_f___p_d_m___type =
+[
+    [ "ENABLE", "struct_n_r_f___p_d_m___type.html#a34300c8727e3aef9029eb7410b824b0f", null ],
+    [ "EVENTS_END", "struct_n_r_f___p_d_m___type.html#aef479ddb8fe1ae80e9cd7d82dbf1c847", null ],
+    [ "EVENTS_STARTED", "struct_n_r_f___p_d_m___type.html#a14d0475d86b61851a6a4540ce8549a70", null ],
+    [ "EVENTS_STOPPED", "struct_n_r_f___p_d_m___type.html#a4d76ddb707c6e6f44ec65efdf453b6ae", null ],
+    [ "GAINL", "struct_n_r_f___p_d_m___type.html#ad26f105019ed0681f8b0b5e1595611ba", null ],
+    [ "GAINR", "struct_n_r_f___p_d_m___type.html#a88a201b2d189626d274a82f4746f63b2", null ],
+    [ "INTEN", "struct_n_r_f___p_d_m___type.html#a25e66b2d19d31a2b69ee581f859dbf00", null ],
+    [ "INTENCLR", "struct_n_r_f___p_d_m___type.html#a70036f04587b4cc7e0d7ec18481d719b", null ],
+    [ "INTENSET", "struct_n_r_f___p_d_m___type.html#a4db8a68c9a5fb79fa2ea009dd32caf8b", null ],
+    [ "MODE", "struct_n_r_f___p_d_m___type.html#a2046c374c3737590d40d6ccfde97041e", null ],
+    [ "PDMCLKCTRL", "struct_n_r_f___p_d_m___type.html#aa3614e63deef29b1ea88ec2dfca58e21", null ],
+    [ "PSEL", "struct_n_r_f___p_d_m___type.html#a894f1e3b8e85a571c45b6cd8366e1416", null ],
+    [ "RATIO", "struct_n_r_f___p_d_m___type.html#af3807a689b0a16f87d383c83d3eba3a5", null ],
+    [ "RESERVED0", "struct_n_r_f___p_d_m___type.html#aac8f47c85565b9cb90eb735e7aca7f03", null ],
+    [ "RESERVED1", "struct_n_r_f___p_d_m___type.html#a4f798539001491e43ac39226a177767b", null ],
+    [ "RESERVED2", "struct_n_r_f___p_d_m___type.html#a28143a7c5bfe9e2d28e4ac54109dc965", null ],
+    [ "RESERVED3", "struct_n_r_f___p_d_m___type.html#a5657c165c27a6e4579a28ab2d6ed5bbc", null ],
+    [ "RESERVED4", "struct_n_r_f___p_d_m___type.html#a193eea5bd3a47d8d8003617df19a650a", null ],
+    [ "RESERVED5", "struct_n_r_f___p_d_m___type.html#a1b96056cde0779de4b19ce05126ab818", null ],
+    [ "SAMPLE", "struct_n_r_f___p_d_m___type.html#a25a68553df343153757b3f66423694d1", null ],
+    [ "TASKS_START", "struct_n_r_f___p_d_m___type.html#a7ca24786a65bc3bf922a7804ef8c4148", null ],
+    [ "TASKS_STOP", "struct_n_r_f___p_d_m___type.html#a368d8e8f1e17634b5ed0ec75d641188b", null ]
+];

@@ -1,0 +1,27 @@
+var nrfx__irqs__nrf51_8h =
+[
+    [ "nrfx_adc_irq_handler", "nrfx__irqs__nrf51_8h.html#a1f0ad7ee5ed6798ba26989d81687a397", null ],
+    [ "nrfx_gpiote_irq_handler", "nrfx__irqs__nrf51_8h.html#ad82e3c81c811479b4bea586d335ae399", null ],
+    [ "nrfx_lpcomp_irq_handler", "nrfx__irqs__nrf51_8h.html#ad65f68c9f2dd5925b9b23142bfa6e302", null ],
+    [ "nrfx_power_clock_irq_handler", "nrfx__irqs__nrf51_8h.html#a2229c4b5dd74999736341816219a2af0", null ],
+    [ "nrfx_qdec_irq_handler", "nrfx__irqs__nrf51_8h.html#aba7743c1e40bbb1664c7f7a5e1f2aaa7", null ],
+    [ "nrfx_rng_irq_handler", "nrfx__irqs__nrf51_8h.html#aec63915f3509134abfd6e7ae8a6ad5ec", null ],
+    [ "nrfx_rtc_0_irq_handler", "nrfx__irqs__nrf51_8h.html#aa43eda848cbc122afe7ee612e0090af2", null ],
+    [ "nrfx_rtc_1_irq_handler", "nrfx__irqs__nrf51_8h.html#ae84fe112b1c9ef29c3852245f3724f59", null ],
+    [ "nrfx_spi_0_irq_handler", "nrfx__irqs__nrf51_8h.html#a3df62ab22d1a835749252716d0e6dae7", null ],
+    [ "nrfx_spi_1_irq_handler", "nrfx__irqs__nrf51_8h.html#acf4f3fe9dd7cec3cc5e93521d28033cc", null ],
+    [ "nrfx_spis_1_irq_handler", "nrfx__irqs__nrf51_8h.html#a6aaf0250e1be97cc87ae354d0fae17d0", null ],
+    [ "nrfx_swi_0_irq_handler", "nrfx__irqs__nrf51_8h.html#abdfc3c28e09e9d1933d97ce907b9b509", null ],
+    [ "nrfx_swi_1_irq_handler", "nrfx__irqs__nrf51_8h.html#a74c70357b0960cc39bc1206bb3d3a5f8", null ],
+    [ "nrfx_swi_2_irq_handler", "nrfx__irqs__nrf51_8h.html#a9cbdc6c260a83bd8dfb3271c50b4fc31", null ],
+    [ "nrfx_swi_3_irq_handler", "nrfx__irqs__nrf51_8h.html#abf7f7100c451d4342cffc87fb70de2f6", null ],
+    [ "nrfx_swi_4_irq_handler", "nrfx__irqs__nrf51_8h.html#aa688ebb52cb4f7671e7b040dc04fbde9", null ],
+    [ "nrfx_swi_5_irq_handler", "nrfx__irqs__nrf51_8h.html#ab53baadfa21039d51ba6b784ab45baed", null ],
+    [ "nrfx_timer_0_irq_handler", "nrfx__irqs__nrf51_8h.html#a99e14a41651167a186d7aae68dba815d", null ],
+    [ "nrfx_timer_1_irq_handler", "nrfx__irqs__nrf51_8h.html#a9c68f32abfdf99b165a14956cfe9025e", null ],
+    [ "nrfx_timer_2_irq_handler", "nrfx__irqs__nrf51_8h.html#a58a30d39bc6fad2e4d9d2adaac1c7e69", null ],
+    [ "nrfx_twi_0_irq_handler", "nrfx__irqs__nrf51_8h.html#a02a92fcf8c1f53410183e0b07aec4d32", null ],
+    [ "nrfx_twi_1_irq_handler", "nrfx__irqs__nrf51_8h.html#a5997b238959aa752acffed4bc7b83624", null ],
+    [ "nrfx_uart_0_irq_handler", "nrfx__irqs__nrf51_8h.html#a9829e2824f92364fc25155619e6c8705", null ],
+    [ "nrfx_wdt_irq_handler", "nrfx__irqs__nrf51_8h.html#a441c8590324a51813bd1738f27928765", null ]
+];

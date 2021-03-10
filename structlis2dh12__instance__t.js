@@ -1,0 +1,28 @@
+var structlis2dh12__instance__t =
+[
+    [ "act_dur", "structlis2dh12__instance__t.html#a391d482dc18b02090100501728b67791", null ],
+    [ "act_ths", "structlis2dh12__instance__t.html#a752688f7500e0aa67021af072feec274", null ],
+    [ "click_cfg", "structlis2dh12__instance__t.html#a0218726d422625e07543d3a6c2511432", null ],
+    [ "click_ths", "structlis2dh12__instance__t.html#a25156c79c663e03890f64343781a39c8", null ],
+    [ "ctrl0", "structlis2dh12__instance__t.html#a33820865b2f0e3357928f6295e6e895a", null ],
+    [ "ctrl1", "structlis2dh12__instance__t.html#ad996e6c5ecb1091e381a3d3ac41f6b9b", null ],
+    [ "ctrl2", "structlis2dh12__instance__t.html#a14f2649d2c955f7d39a4fe4b1becb282", null ],
+    [ "ctrl3", "structlis2dh12__instance__t.html#a9fd56992cc4174d12ab2e6d6f72f4f30", null ],
+    [ "ctrl4", "structlis2dh12__instance__t.html#ae14fc1e1a60edce218113b55e4396f6a", null ],
+    [ "ctrl5", "structlis2dh12__instance__t.html#a9008f3c52004874e27af196527fdf8da", null ],
+    [ "ctrl6", "structlis2dh12__instance__t.html#a4e3ea0992efa1d1f6bf6aebac3316228", null ],
+    [ "fifo_ctrl", "structlis2dh12__instance__t.html#a1b50b1a2bcbac46e5860b0fd32333ea7", null ],
+    [ "int1_cfg", "structlis2dh12__instance__t.html#a5c594e34ddef2a5990f73e694cde2dc9", null ],
+    [ "int1_dur", "structlis2dh12__instance__t.html#aec4af0ba3b18ae2dcb1c995c411a59f3", null ],
+    [ "int1_ths", "structlis2dh12__instance__t.html#a3a9c15d2e4c1fc7f1d280c6bf8d87e51", null ],
+    [ "int2_cfg", "structlis2dh12__instance__t.html#abba6cae8eb238af45dac870c1714a1fa", null ],
+    [ "int2_dur", "structlis2dh12__instance__t.html#a2988ea005eb8cdbe51e44a2a0a28224a", null ],
+    [ "int2_ths", "structlis2dh12__instance__t.html#a3ba8acc31f8b39b61a386d748401734e", null ],
+    [ "latency", "structlis2dh12__instance__t.html#a6d66100f69ff92351f2f9b4a6be529bd", null ],
+    [ "p_sensor_data", "structlis2dh12__instance__t.html#a61cf21fe7cbd51197c05bfd24856ad02", null ],
+    [ "reference", "structlis2dh12__instance__t.html#af3287db9837451d2fd485577e09bfad4", null ],
+    [ "sensor_addr", "structlis2dh12__instance__t.html#a2dc971f38e397c665adb574a8f599980", null ],
+    [ "temp_cfg", "structlis2dh12__instance__t.html#a84fde0b5a87e491fc806f95f1a6bf113", null ],
+    [ "time_lim", "structlis2dh12__instance__t.html#a1bed4a9d405680db099844785512bc09", null ],
+    [ "time_win", "structlis2dh12__instance__t.html#a4f1b8b744a3c2777ceb29db2ed4faca7", null ]
+];

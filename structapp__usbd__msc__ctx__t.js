@@ -1,0 +1,28 @@
+var structapp__usbd__msc__ctx__t =
+[
+    [ "blk_count", "structapp__usbd__msc__ctx__t.html#ab1aafef9e83459937c49c81564adde6f", null ],
+    [ "blk_datasize", "structapp__usbd__msc__ctx__t.html#aab69e5b28217cd16a4f3f2c55d0b0a2f", null ],
+    [ "blk_dev_init_mask", "structapp__usbd__msc__ctx__t.html#abf017e2dadbdd55da34130ff8ef4a608", null ],
+    [ "blk_idx", "structapp__usbd__msc__ctx__t.html#a09001446323afa08bab98c200c80b6d9", null ],
+    [ "blk_size", "structapp__usbd__msc__ctx__t.html#a5c6119761d4ecb2975ae24760db905b8", null ],
+    [ "block_req_in_progress", "structapp__usbd__msc__ctx__t.html#ad41d73ad07e2be5ca6f3551aa137a92b", null ],
+    [ "cbw", "structapp__usbd__msc__ctx__t.html#afc5d081dbcf5fb72c5abf52860697512", null ],
+    [ "csw", "structapp__usbd__msc__ctx__t.html#a6333be0271c0d6fc2629fd96c3c998ae", null ],
+    [ "csw_status", "structapp__usbd__msc__ctx__t.html#ae6330656ad922d0c8921b310ba5b9cd4", null ],
+    [ "current", "structapp__usbd__msc__ctx__t.html#a1345c90dd6bd1534606aa28928cb3d78", null ],
+    [ "inquiry", "structapp__usbd__msc__ctx__t.html#ad50557f6a11970d7cfc451208c7840c2", null ],
+    [ "lun", "structapp__usbd__msc__ctx__t.html#a2fe282edd33581acfa1c3c4131c78d97", null ],
+    [ "modesense10", "structapp__usbd__msc__ctx__t.html#a646fb8a5058913962c6f8aa60912845f", null ],
+    [ "modesense6", "structapp__usbd__msc__ctx__t.html#a0028fd01e5a17b603b2f249de1e6e816", null ],
+    [ "readcapacity10", "structapp__usbd__msc__ctx__t.html#adf317178fb430c96f8d0980fdc1f3d6d", null ],
+    [ "req", "structapp__usbd__msc__ctx__t.html#a4d9952266543e466f5d46fc39ae08b86", null ],
+    [ "req_busy_mask", "structapp__usbd__msc__ctx__t.html#a228f7e7040e6dcc3126f112f37143f7f", null ],
+    [ "requestsense", "structapp__usbd__msc__ctx__t.html#a61e5772a24e54fdac65a17a0badc3055", null ],
+    [ "residue", "structapp__usbd__msc__ctx__t.html#a0b799bd098199779cef86b0e884bb699", null ],
+    [ "resp_len", "structapp__usbd__msc__ctx__t.html#a20b60161640e46ed99e015499e7eeeb9", null ],
+    [ "scsi_resp", "structapp__usbd__msc__ctx__t.html#ac6c218bb19fa887dd96aa63d8ac98c91", null ],
+    [ "state", "structapp__usbd__msc__ctx__t.html#aaf857647d7425b8a6b1fd7561c8f76b1", null ],
+    [ "trans_in_progress", "structapp__usbd__msc__ctx__t.html#a975e2e5d8c07b499273c5b8597df79a7", null ],
+    [ "trans_req_id", "structapp__usbd__msc__ctx__t.html#aa4bad88ec4975d8b3fb9c836355c2305", null ],
+    [ "workbuff_pos", "structapp__usbd__msc__ctx__t.html#a7572066205af4ee83468baf307926059", null ]
+];
