@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('md_firmware_bootloader_external_mbedtl
 <li><code>x86-linux-native</code></li>
 <li><code>x86-osx-native</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md58"></a>
+<h1><a class="anchor" id="autotoc_md67"></a>
 Sample programs</h1>
 <p>This release includes the following examples:</p>
 <ol type="1">
@@ -107,11 +107,11 @@ Sample programs</h1>
 <li><a href="https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/example-authcrypt"><b>Authenticated encryption:</b></a> Demonstrates usage of the Cipher API for encrypting and authenticating data with AES-CCM.</li>
 </ol>
 <p>These examples are integrated as yotta tests, so that they are built automatically when you build mbed TLS. Each of them comes with complete usage instructions as a Readme file in the repository.</p>
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md68"></a>
 Performing TLS and DTLS connections</h1>
 <p>A high-level API for performing TLS and DTLS connections with mbed TLS in mbed OS is provided in a separate yotta module: <a href="https://github.com/ARMmbed/mbed-tls-sockets">mbed-tls-sockets</a>. We recommend this API for TLS and DTLS connections. It is very similar to the API provided by the <a href="https://github.com/ARMmbed/sockets">sockets</a> module for unencrypted TCP and UDP connections.</p>
 <p>The <code>mbed-tls-sockets</code> module includes a complete <a href="https://github.com/ARMmbed/mbed-tls-sockets/blob/master/test/tls-client/main.cpp">example TLS client</a> with <a href="https://github.com/ARMmbed/mbed-tls-sockets/blob/master/test/tls-client/README.md">usage instructions</a>.</p>
-<h1><a class="anchor" id="autotoc_md60"></a>
+<h1><a class="anchor" id="autotoc_md69"></a>
 Configuring mbed TLS features</h1>
 <p>mbed TLS makes it easy to disable any feature during compilation, if that feature isn't required for a particular project. The default configuration enables all modern and widely-used features, which should meet the needs of new projects, and disables all features that are older or less common, to minimize the code footprint.</p>
 <p>The list of available compilation flags is available in the fully documented <a href="https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/config.h">config.h file</a>.</p>
@@ -126,13 +126,13 @@ Configuring mbed TLS features</h1>
    }
 }
 </pre><p> Please note: you need to provide the exact name that will be used in the <code>#include</code> directive, including the <code>&lt;&gt;</code> or quotes around the name.</p>
-<h1><a class="anchor" id="autotoc_md61"></a>
+<h1><a class="anchor" id="autotoc_md70"></a>
 Getting mbed TLS from GitHub</h1>
 <p>Like most components of mbed OS, mbed TLS is developed in the open and its source can be found on GitHub: <a href="https://github.com/ARMmbed/mbedtls">ARMmbed/mbedtls</a>. Unlike most other mbed OS components, however, you cannot just clone the repository and run <code>yotta build</code> from its root. This is because mbed TLS also exists as an independent component, so its repository includes things that are not relevant for mbed OS, as well as other build systems.</p>
 <p>The way to use mbed TLS from a clone of the GitHub repository is to run the following commands from the root of a checkout: </p><pre class="fragment">yotta/create-module.sh
 cd yotta/module
 </pre><p> You can then run any yotta command you would normally run, such as <code>yotta build</code> or <code>yotta link</code>.</p>
-<h1><a class="anchor" id="autotoc_md62"></a>
+<h1><a class="anchor" id="autotoc_md71"></a>
 Differences between the standalone and mbed OS editions</h1>
 <p>While the two editions share the same code base, there are still a number of differences, mainly in configuration and integration. You should keep in mind those differences when reading some articles in our <a href="https://tls.mbed.org/kb">knowledge base</a>, as currently all the articles are about the standalone edition.</p>
 <ul>
@@ -140,10 +140,10 @@ Differences between the standalone and mbed OS editions</h1>
 <li>The following components of mbed TLS are disabled in the mbed OS edition: <code><a class="el" href="net__sockets_8c.html">net_sockets.c</a></code> and <code><a class="el" href="timing_8c.html">timing.c</a></code>. This is because mbed OS include their equivalents.</li>
 <li>The mbed OS edition comes with a fully integrated API for (D)TLS connections in a companion module: <a href="https://github.com/ARMmbed/mbed-tls-sockets">mbed-tls-sockets</a>. See "Performing TLS and DTLS connections" above.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md63"></a>
+<h1><a class="anchor" id="autotoc_md72"></a>
 Other resources</h1>
 <p>The <a href="https://tls.mbed.org">mbed TLS website</a> contains many other useful resources for the developer, such as <a href="https://tls.mbed.org/dev-corner">developer documentation</a>, <a href="https://tls.mbed.org/kb">knowledgebase articles</a>, and a <a href="https://tls.mbed.org/discussions">support forum</a>.</p>
-<h1><a class="anchor" id="autotoc_md64"></a>
+<h1><a class="anchor" id="autotoc_md73"></a>
 Contributing</h1>
 <p>We gratefully accept bug reports and contributions from the community. There are some requirements we need to fulfill in order to be able to integrate contributions:</p>
 <ul>

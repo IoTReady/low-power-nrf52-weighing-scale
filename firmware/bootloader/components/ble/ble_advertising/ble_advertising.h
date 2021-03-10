@@ -334,4 +334,4 @@ void ble_advertising_modes_config_set(ble_advertising_t            * const p_adv
 
 #endif // BLE_ADVERTISING_H__
 
-/** @} */
+

@@ -1,4 +1,3 @@
-@mainpage
 # Smart Weighing Scale  
 
 This project describes a Smart Weighing Scale with low current consumption, and hence a long battery backup.
@@ -48,8 +47,8 @@ The data from the Load Cell is received via four pins HX711_IN+, HX711_IN-, HX71
 There is no programming needed for the internal registers. All controls to the HX711 are through the pins.
 
 ### E-Ink Display
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem09.jpeg)
-![image](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/schem10.jpeg)
+![image](./design/scale_hx711/docs/images/schem09.jpeg)
+![image](./design/scale_hx711/docs/images/schem10.jpeg)
 
 We decided to go with an E-Ink display as it is very low power consuming, reflection resistant, and was useful for the application we were targeting.
 This is a 1.54" 200x200 pixel [E-Ink display](https://www.e-paper-display.com/products_detail/productId=513.html) from Good Display.
@@ -57,6 +56,38 @@ This is a 1.54" 200x200 pixel [E-Ink display](https://www.e-paper-display.com/pr
 
 ## PCB
 This is what the final PCB design looks like:
-![front_pcb](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/pcb1.jpeg)
-![back_pcb](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/pcb2.jpeg)
-![gerber_pcb](https://github.com/IoTReady/weighing_scale_nrf/blob/master/design/scale_hx711/docs/images/pcb3.jpeg)
+![front_pcb](./design/scale_hx711/docs/images/pcb1.jpeg)
+![back_pcb](./design/scale_hx711/docs/images/pcb2.jpeg)
+![gerber_pcb](./design/scale_hx711/docs/images/pcb3.jpeg)
+
+## Hardware Builds
+
+Hardware design files are available in the "design" sub-folder
+
+We tried 3 different designs for the weighing scale project and settled with the "HX711" based design as our final.
+
+So you will find the final design explained on the main page.
+
+The other two designs of "LPV821" and "LTC6915" based weighing scales are also fully functional, one may have to play around with the adc functions in the firmware though.
+
+## Software Builds
+
+One can find the main application with all library files(for e-ink display, and weighing scale) in the "Application" folder.
+
+To setup the Nordic SDK and bootloader files follow the links in "Bootloader" folder. Also, the "documentation" folder has some good technical data.
+
+To make changes in the firmware go to "weighing_scale_nrf/firmware/application/w_scale_all/" and make necessary changes.
+
+To build the output files, go to the same location and use this command to generate final output files(.hex):
+```
+make release
+```
+
+Then use the following to flash and debug the firmware:
+```
+make upload
+```
+
+This is a custom makefile, so make sure all Debugger setings are proper. Like, make sure the Debugge name and Serial Number are correct.
+
+These can be set in this [makefile](https://github.com/IoTReady/weighing_scale_nrf/blob/master/firmware/application/w_scale_all/Makefile).

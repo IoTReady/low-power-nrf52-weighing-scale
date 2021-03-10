@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['overview_76801',['Overview',['../index.html',1,'']]]
+  ['smart_20weighing_20scale_76794',['Smart Weighing Scale',['../index.html',1,'']]]
 ];

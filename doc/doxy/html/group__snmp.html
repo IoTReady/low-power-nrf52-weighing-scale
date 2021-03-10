@@ -110,9 +110,9 @@ The agent implements the most important MIB2 MIBs including IPv6 support (interf
 Rewritten by Martin Hentschel <a href="#" onclick="location.href='mai'+'lto:'+'inf'+'o@'+'cl-'+'so'+'ft.'+'de'; return false;">info@<span style="display: none;">.nosp@m.</span>cl-s<span style="display: none;">.nosp@m.</span>oft.d<span style="display: none;">.nosp@m.</span>e</a> and Dirk Ziegelmeier <a href="#" onclick="location.href='mai'+'lto:'+'dzi'+'eg'+'el@'+'gm'+'x.d'+'e'; return false;">dzieg<span style="display: none;">.nosp@m.</span>el@g<span style="display: none;">.nosp@m.</span>mx.de</a><br  />
 Work on SNMPv3 has started, but is not finished.<br  />
  </p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md32"></a>
 0 Agent Capabilities</h1>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Features:</h2>
 <ul>
 <li>SNMPv2c support.</li>
@@ -127,7 +127,7 @@ Features:</h2>
 <li>Async API is gone - the stack now supports netconn API instead, so blocking operations can be done in MIB calls. SNMP runs in a worker thread when netconn API is used.</li>
 <li>Simplified thread sync support for MIBs - useful when MIBs need to access variables shared with other threads where no locking is possible. Used in MIB2 to access lwIP stats from lwIP thread.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 MIB compiler (code generator):</h2>
 <ul>
 <li>Provided in lwIP contrib repository.</li>
@@ -137,29 +137,29 @@ MIB compiler (code generator):</h2>
 <li>Based on a heavily modified version of of SharpSnmpLib (a4bd05c6afb4) (<a href="https://sharpsnmplib.codeplex.com/SourceControl/network/forks/Nemo157/MIBParserUpdate">https://sharpsnmplib.codeplex.com/SourceControl/network/forks/Nemo157/MIBParserUpdate</a>).</li>
 <li>MIB parser, C file generation framework and LWIP code generation are cleanly separated, which means the code may be useful as a base for code generation of other SNMP agents.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Notes:</h2>
 <ul>
 <li>Stack and MIB compiler were used to implement a Profinet device. Compiled/implemented MIBs: LLDP-MIB, LLDP-EXT-DOT3-MIB, LLDP-EXT-PNO-MIB.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 SNMPv1 per RFC1157 and SNMPv2c per RFC 3416</h2>
 <p>Note the S in SNMP stands for "Simple". Note that "Simple" is relative. SNMP is simple compared to the complex ISO network management protocols CMIP (Common Management Information Protocol) and CMOT (CMip Over Tcp).</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 MIB II</h2>
 <p>The standard lwIP stack management information base. This is a required MIB, so this is always enabled. The groups EGP, CMOT and transmission are disabled by default.</p>
 <p>Most mib-2 objects are not writable except: sysName, sysLocation, sysContact, snmpEnableAuthenTraps. Writing to or changing the ARP and IP address and route tables is not possible.</p>
 <p>Note lwIP has a very limited notion of IP routing. It currently doen't have a route table and doesn't have a notion of the U,G,H flags. Instead lwIP uses the interface list with only one default interface acting as a single gateway interface (G) for the default route.</p>
 <p>The agent returns a "virtual table" with the default route 0.0.0.0 for the default interface and network routes (no H) for each network interface in the netif_list. All routes are considered to be up (U).</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
 Loading additional MIBs</h2>
 <p>MIBs can only be added in compile-time, not in run-time.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md39"></a>
 1 Building the Agent</h1>
 <p>First of all you'll need to add the following define to your local <a class="el" href="lwipopts_8h.html">lwipopts.h</a>: #define LWIP_SNMP 1</p>
 <p>and add the source files your makefile.</p>
 <p>Note you'll might need to adapt you network driver to update the mib2 variables for your interface.</p>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md40"></a>
 2 Running the Agent</h1>
 <p>The following function calls must be made in your program to actually get the SNMP agent running.</p>
 <p>Before starting the agent you should supply pointers for sysContact, sysLocation, and snmpEnableAuthenTraps. You can do this by calling</p>

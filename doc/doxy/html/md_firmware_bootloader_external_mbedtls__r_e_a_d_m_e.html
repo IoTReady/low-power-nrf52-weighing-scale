@@ -89,11 +89,11 @@ $(document).ready(function(){initNavTree('md_firmware_bootloader_external_mbedtl
 <div class="title">README for mbed TLS </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md33"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md42"></a>
 Configuration</h1>
 <p>mbed TLS should build out of the box on most systems. Some platform specific options are available in the fully documented configuration file <code><a class="el" href="config_8h.html" title="Configuration options (set of defines)">include/mbedtls/config.h</a></code>, which is also the place where features can be selected. This file can be edited manually, or in a more programmatic way using the Perl script <code>scripts/config.pl</code> (use <code>--help</code> for usage instructions).</p>
 <p>Compiler options can be set using conventional environment variables such as <code>CC</code> and <code>CFLAGS</code> when using the Make and CMake build system (see below).</p>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md43"></a>
 Compiling</h1>
 <p>There are currently four active build systems used within mbed TLS releases:</p>
 <ul>
@@ -109,7 +109,7 @@ Compiling</h1>
 <li>depending on the yotta target, features of mbed OS may be used in examples and tests</li>
 </ul>
 <p>The Make and CMake build systems create three libraries: libmbedcrypto, libmbedx509, and libmbedtls. Note that libmbedtls depends on libmbedx509 and libmbedcrypto, and libmbedx509 depends on libmbedcrypto. As a result, some linkers will expect flags to be in a specific order, for example the GNU linker wants <code>-lmbedtls -lmbedx509 -lmbedcrypto</code>. Also, when loading shared libraries using dlopen(), you'll need to load libmbedcrypto first, then libmbedx509, before you can load libmbedtls.</p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Yotta</h2>
 <p><a href="http://yottabuild.org">yotta</a> is a package manager and build system developed by mbed, and is the build system of mbed OS 16.03. To install it on your platform, please follow the yotta <a href="http://docs.yottabuild.org/#installing">installation instructions</a>.</p>
 <p>Once yotta is installed, you can use it to download the latest version of mbed TLS from the yotta registry with: </p><pre class="fragment">yotta install mbedtls
@@ -119,7 +119,7 @@ Yotta</h2>
 yotta build
 </pre><p> In any case, you'll probably want to set the yotta target before building unless it has already been set globally. For more information on using yotta, please consult the <a href="http://docs.yottabuild.org/">yotta documentation</a>.</p>
 <p>For more details on the yotta/mbed OS edition of mbed TLS, including example programs, please consult the <a href="https://github.com/ARMmbed/mbedtls/blob/development/yotta/data/README.md">Readme at the root of the yotta module</a>.</p>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Make</h2>
 <p>We intentionally only use the minimum of <code>Make</code> functionality, as a lot of <code>Make</code> features are not supported on all different implementations of Make or on different platforms. As such, the Makefiles sometimes require some manual changes or export statements in order to work for your platform.</p>
 <p>In order to build from the source code using Make, just enter at the command line: </p><pre class="fragment">make
@@ -130,7 +130,7 @@ Make</h2>
 <p>Setting the variable <code>SHARED</code> in your environment will build shared libraries in addition to the static libraries. Setting <code>DEBUG</code> gives you a debug build. You can override <code>CFLAGS</code> and <code>LDFLAGS</code> by setting them in your environment or on the make command line; if you do so, essential parts such as <code>-I</code> will still be preserved. Warning options may be overridden separately using <code>WARNING_CFLAGS</code>.</p>
 <p>Depending on your platform, you might run into some issues. Please check the Makefiles in <code>library/</code>, <code>programs/</code> and <code>tests/</code> for options to manually add or remove for specific platforms. You can also check <a href="https://tls.mbed.org/kb">the mbed TLS Knowledge Base</a> for articles on your platform or issue.</p>
 <p>In case you find that you need to do something else as well, please let us know what, so we can add it to the <a href="https://tls.mbed.org/kb">mbed TLS knowledge base</a>.</p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 CMake</h2>
 <p>In order to build the source using CMake, just enter at the command line: </p><pre class="fragment">cmake .
 make
@@ -153,14 +153,14 @@ make
 </pre><p> To list other available CMake options, use: </p><pre class="fragment">cmake -LH
 </pre><p> Note that, with CMake, if you want to change the compiler or its options after you already ran CMake, you need to clear its cache first, e.g. (using GNU find): </p><pre class="fragment">find . -iname '*cmake*' -not -name CMakeLists.txt -exec rm -rf {} +
 CC=gcc CFLAGS='-fstack-protector-strong -Wa,--noexecstack' cmake .
-</pre> <h2><a class="anchor" id="autotoc_md38"></a>
+</pre> <h2><a class="anchor" id="autotoc_md47"></a>
 Microsoft Visual Studio</h2>
 <p>The build files for Microsoft Visual Studio are generated for Visual Studio 2010.</p>
 <p>The solution file <code>mbedTLS.sln</code> contains all the basic projects needed to build the library and all the programs. The files in tests are not generated and compiled, as these need a perl environment as well. However, the selftest program in <code>programs/test/</code> is still available.</p>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
 Example programs</h1>
 <p>We've included example programs for a lot of different features and uses in <code>programs/</code>. Most programs only focus on a single feature or usage scenario, so keep that in mind when copying parts of the code.</p>
-<h1><a class="anchor" id="autotoc_md40"></a>
+<h1><a class="anchor" id="autotoc_md49"></a>
 Tests</h1>
 <p>mbed TLS includes an elaborate test suite in <code>tests/</code> that initially requires Perl to generate the tests files (e.g. <code>test\_suite\_mpi.c</code>). These files are generated from a <code>function file</code> (e.g. <code>suites/test\_suite\_mpi.function</code>) and a <code>data file</code> (e.g. <code>suites/test\_suite\_mpi.data</code>). The <code>function file</code> contains the test functions. The <code>data file</code> contains the test cases, specified as parameters that will be passed to the test function.</p>
 <p>For machines with a Unix shell and OpenSSL (and optionally GnuTLS) installed, additional test scripts are available:</p>
@@ -171,10 +171,10 @@ Tests</h1>
 <li><code>tests/scripts/key-exchanges.pl</code> test builds in configurations with a single key exchange enabled</li>
 <li><code>tests/scripts/all.sh</code> runs a combination of the above tests, plus some more, with various build options (such as ASan, full <code><a class="el" href="config_8h.html" title="Configuration options (set of defines)">config.h</a></code>, etc).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md50"></a>
 Configurations</h1>
 <p>We provide some non-standard configurations focused on specific use cases in the <code>configs/</code> directory. You can read more about those in <code>configs/README.txt</code></p>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md51"></a>
 Porting mbed TLS</h1>
 <p>mbed TLS can be ported to many different architectures, OS's and platforms. Before starting a port, you may find the following knowledge base articles useful:</p>
 <ul>
@@ -182,7 +182,7 @@ Porting mbed TLS</h1>
 <li><a href="https://tls.mbed.org/kb/development/what-external-dependencies-does-mbedtls-rely-on">What external dependencies does mbed TLS rely on?</a></li>
 <li><a href="https://tls.mbed.org/kb/compiling-and-building/how-do-i-configure-mbedtls">How do I configure mbed TLS</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="autotoc_md52"></a>
 Contributing</h1>
 <p>We gratefully accept bug reports and contributions from the community. There are some requirements we need to fulfill in order to be able to integrate contributions:</p>
 <ul>
@@ -191,7 +191,7 @@ Contributing</h1>
 <li>As with any open source project, contributions will be reviewed by the project team and community and may need some modifications to be accepted.</li>
 </ul>
 <p>To accept the Contributor’s Licence Agreement (CLA), individual contributors can do this by creating an mbed account and <a href="https://developer.mbed.org/contributor_agreement/">accepting the online agreement here with a click through</a>. Alternatively, for contributions from corporations, or those that do not wish to create an mbed account, a slightly different agreement can be found <a href="https://www.mbed.com/en/about-mbed/contributor-license-agreements/">here</a>. This agreement should be signed and returned to ARM as described in the instructions given.</p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 Making a Contribution</h2>
 <ol type="1">
 <li><a href="https://github.com/ARMmbed/mbedtls/issues">Check for open issues</a> or <a href="https://tls.mbed.org/discussions">start a discussion</a> around a feature idea or a bug.</li>
