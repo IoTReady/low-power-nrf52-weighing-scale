@@ -1,32 +1,4 @@
 var searchData=
 [
-  ['fds_5fdescriptor_5ffrom_5frec_5fid_44245',['fds_descriptor_from_rec_id',['../group__fds.html#ga68a38771138f19c40d8ef9f61582a155',1,'fds.h']]],
-  ['fds_5ffile_5fdelete_44246',['fds_file_delete',['../group__fds.html#ga8b4618e5f1a5a86296db525508f5692a',1,'fds.h']]],
-  ['fds_5fgc_44247',['fds_gc',['../group__fds.html#ga90285f376c435c64b352023e725b7ebb',1,'fds.h']]],
-  ['fds_5finit_44248',['fds_init',['../group__fds.html#ga2382947318f107a9c8d08a9a5916ccf4',1,'fds.h']]],
-  ['fds_5frecord_5fclose_44249',['fds_record_close',['../group__fds.html#gaf8d958ecd339e9d2fc3dba40c4503eea',1,'fds.h']]],
-  ['fds_5frecord_5fdelete_44250',['fds_record_delete',['../group__fds.html#gaf97cabe15afd74024e4250e931c720cd',1,'fds.h']]],
-  ['fds_5frecord_5ffind_44251',['fds_record_find',['../group__fds.html#ga15112e682cc2c4771945fcf5816e3b1b',1,'fds.h']]],
-  ['fds_5frecord_5ffind_5fby_5fkey_44252',['fds_record_find_by_key',['../group__fds.html#gad5a5ad980e0b2b27a693ca5c0296e9c2',1,'fds.h']]],
-  ['fds_5frecord_5ffind_5fin_5ffile_44253',['fds_record_find_in_file',['../group__fds.html#gaa5bc8844b42493c8d9cdc02d245718fc',1,'fds.h']]],
-  ['fds_5frecord_5fid_5ffrom_5fdesc_44254',['fds_record_id_from_desc',['../group__fds.html#ga5d56475359f7fd1343d9815dd5b4b310',1,'fds.h']]],
-  ['fds_5frecord_5fiterate_44255',['fds_record_iterate',['../group__fds.html#ga71a586b6017690b888ead2a8bd04caee',1,'fds.h']]],
-  ['fds_5frecord_5fopen_44256',['fds_record_open',['../group__fds.html#gab718add23b30b0e663e48a781645879f',1,'fds.h']]],
-  ['fds_5frecord_5fupdate_44257',['fds_record_update',['../group__fds.html#gaa71e86ec4e3022063eb08c3411636561',1,'fds.h']]],
-  ['fds_5frecord_5fwrite_44258',['fds_record_write',['../group__fds.html#ga0114083241dc287c7145fe113c9adc2c',1,'fds.h']]],
-  ['fds_5frecord_5fwrite_5freserved_44259',['fds_record_write_reserved',['../group__fds.html#ga39ce61a46549ddc2340f1841c0c4aee2',1,'fds.h']]],
-  ['fds_5fregister_44260',['fds_register',['../group__fds.html#gadc98fdddd6201988f408116ee0dc4fe5',1,'fds.h']]],
-  ['fds_5freserve_44261',['fds_reserve',['../group__fds.html#ga3ee0de6ed4af09fd7d4b3ae7751546ce',1,'fds.h']]],
-  ['fds_5freserve_5fcancel_44262',['fds_reserve_cancel',['../group__fds.html#ga59947ed9ab3156d32b284a05783d9b3e',1,'fds.h']]],
-  ['fds_5fstat_44263',['fds_stat',['../group__fds.html#ga5d3f04e9755408293408be377f7eeaf9',1,'fds.h']]],
-  ['fields_5fdeclaration_44264',['fields_declaration',['../classnanopb__generator_1_1_message.html#a0230ff33ff0a38b38c6639a299fffd4d',1,'nanopb_generator::Message']]],
-  ['fields_5fdefinition_44265',['fields_definition',['../classnanopb__generator_1_1_message.html#aeee9704ed35b65ab794c7b9eb843d250',1,'nanopb_generator::Message']]],
-  ['file_5fput_5fascii_44266',['file_put_ascii',['../makefsdata_8c.html#ae1515e6c1677553b47e37e4873249a42',1,'makefsdata.c']]],
-  ['file_5fwrite_5fhttp_5fheader_44267',['file_write_http_header',['../makefsdata_8c.html#a7a7e2ed3ae3fb34cf5999ddb1efd55e8',1,'makefsdata.c']]],
-  ['fnmatch_44268',['fnmatch',['../fnmatch_8c.html#a088b414f40eb0ce3dad9e5243816f68f',1,'fnmatch(const char *pattern, const char *string, int flags):&#160;fnmatch.c'],['../fnmatch_8h.html#ae8c5fe22c6e8e83faa4a413e9f07f6a0',1,'fnmatch(const char *, const char *, int):&#160;fnmatch.c']]],
-  ['for_44269',['for',['../example-buffer_8c.html#a0cce0f0de9d4197133eb412d2c96cde5',1,'example-buffer.c']]],
-  ['fs_5fbytes_5fleft_44270',['fs_bytes_left',['../fs_8c.html#a3a7ab7c6c0ddd559030d8e91d94ea02b',1,'fs_bytes_left(struct fs_file *file):&#160;fs.c'],['../fs_8h.html#a3a7ab7c6c0ddd559030d8e91d94ea02b',1,'fs_bytes_left(struct fs_file *file):&#160;fs.c']]],
-  ['fs_5fclose_44271',['fs_close',['../fs_8c.html#a742b1911f18d0c780436b7a6abb08c70',1,'fs_close(struct fs_file *file):&#160;fs.c'],['../fs_8h.html#a742b1911f18d0c780436b7a6abb08c70',1,'fs_close(struct fs_file *file):&#160;fs.c']]],
-  ['fs_5fopen_44272',['fs_open',['../fs_8c.html#a594058d3f4dd9f333c51b7e5ca910ac3',1,'fs_open(struct fs_file *file, const char *name):&#160;fs.c'],['../fs_8h.html#a594058d3f4dd9f333c51b7e5ca910ac3',1,'fs_open(struct fs_file *file, const char *name):&#160;fs.c']]],
-  ['fw_5fver_5fget_44273',['fw_ver_get',['../group__group__dev__id__fw__ver.html#gad70a01809cd9d937dc81695c346c33a4',1,'fw_ver_get(void):&#160;dev_id_fw_ver.c'],['../group__group__dev__id__fw__ver.html#gad70a01809cd9d937dc81695c346c33a4',1,'fw_ver_get(void):&#160;dev_id_fw_ver.c']]]
+  ['leds_5finit_216',['leds_init',['../group__group__appln.html#gacdf2063c18461f6ed748ca0d54029f36',1,'main.c']]]
 ];

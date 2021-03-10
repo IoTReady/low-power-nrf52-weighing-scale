@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['6lowpan_20netif_76011',['6LowPAN netif',['../group__sixlowpan.html',1,'']]]
+  ['group_5fappln_360',['Group_appln',['../group__group__appln.html',1,'']]]
 ];

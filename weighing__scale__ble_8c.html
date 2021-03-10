@@ -101,23 +101,23 @@ $(document).ready(function(){initNavTree('weighing__scale__ble_8c.html',''); ini
 <code>#include &quot;app_error.h&quot;</code><br />
 <code>#include &quot;boards.h&quot;</code><br />
 <code>#include &quot;stddef.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__util_8h_source.html">common_util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="nrf__util_8h_source.html">nrf_util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="evt__sd__handler_8h_source.html">evt_sd_handler.h</a>&quot;</code><br />
+<code>#include &quot;common_util.h&quot;</code><br />
+<code>#include &quot;nrf_util.h&quot;</code><br />
+<code>#include &quot;log.h&quot;</code><br />
+<code>#include &quot;evt_sd_handler.h&quot;</code><br />
 <code>#include &quot;string.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a0857605f4a95885e173bf8631ca83073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a0857605f4a95885e173bf8631ca83073">ADVERTISING_INTERVAL</a>&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(500, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371a448dcb5272567df7360a964e7c9b91b1">UNIT_0_625_MS</a>)</td></tr>
+<tr class="memitem:a0857605f4a95885e173bf8631ca83073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a0857605f4a95885e173bf8631ca83073">ADVERTISING_INTERVAL</a>&#160;&#160;&#160;MSEC_TO_UNITS(500, UNIT_0_625_MS)</td></tr>
 <tr class="separator:a0857605f4a95885e173bf8631ca83073"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95196d5d0f40cf195a6001955d6d98cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a95196d5d0f40cf195a6001955d6d98cf">MIN_CONN_INTERVAL</a>&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(200, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371abd6cc6c5518e69158001db0a5b3c4410">UNIT_1_25_MS</a>)</td></tr>
+<tr class="memitem:a95196d5d0f40cf195a6001955d6d98cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a95196d5d0f40cf195a6001955d6d98cf">MIN_CONN_INTERVAL</a>&#160;&#160;&#160;MSEC_TO_UNITS(200, UNIT_1_25_MS)</td></tr>
 <tr class="separator:a95196d5d0f40cf195a6001955d6d98cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d868ed8adb7d475b463fd8855907a18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a7d868ed8adb7d475b463fd8855907a18">MAX_CONN_INTERVAL</a>&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(500, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371abd6cc6c5518e69158001db0a5b3c4410">UNIT_1_25_MS</a>)</td></tr>
+<tr class="memitem:a7d868ed8adb7d475b463fd8855907a18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a7d868ed8adb7d475b463fd8855907a18">MAX_CONN_INTERVAL</a>&#160;&#160;&#160;MSEC_TO_UNITS(500, UNIT_1_25_MS)</td></tr>
 <tr class="separator:a7d868ed8adb7d475b463fd8855907a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c921a874ac37870fc1516ce66cd228a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a0c921a874ac37870fc1516ce66cd228a">SLAVE_LATENCY</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a0c921a874ac37870fc1516ce66cd228a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a799412c2b531ca347e13611e6e7523b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a799412c2b531ca347e13611e6e7523b9">CONN_SUP_TIMEOUT</a>&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(4000, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371adfbb1465ed01976b118bae937a90cc60">UNIT_10_MS</a>)</td></tr>
+<tr class="memitem:a799412c2b531ca347e13611e6e7523b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a799412c2b531ca347e13611e6e7523b9">CONN_SUP_TIMEOUT</a>&#160;&#160;&#160;MSEC_TO_UNITS(4000, UNIT_10_MS)</td></tr>
 <tr class="separator:a799412c2b531ca347e13611e6e7523b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ab55ac20ea269e9d0eb4ab153d29467"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a6ab55ac20ea269e9d0eb4ab153d29467">APP_BLE_CONN_CFG_TAG</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a6ab55ac20ea269e9d0eb4ab153d29467"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +136,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acbaeba17b7ce606b584c02c5b598d82a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#acbaeba17b7ce606b584c02c5b598d82a">ble_evt_handler</a> (<a class="el" href="structble__evt__t.html">ble_evt_t</a> *evt)</td></tr>
+<tr class="memitem:acbaeba17b7ce606b584c02c5b598d82a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#acbaeba17b7ce606b584c02c5b598d82a">ble_evt_handler</a> (ble_evt_t *evt)</td></tr>
 <tr class="memdesc:acbaeba17b7ce606b584c02c5b598d82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to handle BLE events.  <a href="weighing__scale__ble_8c.html#acbaeba17b7ce606b584c02c5b598d82a">More...</a><br /></td></tr>
 <tr class="separator:acbaeba17b7ce606b584c02c5b598d82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40266176a999c46fe6f79946a229cb45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a40266176a999c46fe6f79946a229cb45">soc_evt_handler</a> (uint32_t evt_id)</td></tr>
@@ -185,21 +185,21 @@ Variables</h2></td></tr>
 <tr class="separator:ae7c08428576a40335a78ce957ef89934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2a32f9fd00b6955085236f1fe2dbefd"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#ae2a32f9fd00b6955085236f1fe2dbefd">h_weight_service</a></td></tr>
 <tr class="separator:ae2a32f9fd00b6955085236f1fe2dbefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c6e8aaabeeca613ff9f18d6471a7f37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a5c6e8aaabeeca613ff9f18d6471a7f37">h_weight_data</a></td></tr>
+<tr class="memitem:a5c6e8aaabeeca613ff9f18d6471a7f37"><td class="memItemLeft" align="right" valign="top">ble_gatts_char_handles_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a5c6e8aaabeeca613ff9f18d6471a7f37">h_weight_data</a></td></tr>
 <tr class="separator:a5c6e8aaabeeca613ff9f18d6471a7f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f61eae5780884c959539cc13c2f0044"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a9f61eae5780884c959539cc13c2f0044">h_setting_service</a></td></tr>
 <tr class="separator:a9f61eae5780884c959539cc13c2f0044"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1db9b8800b65c0aed05869beb901055"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#af1db9b8800b65c0aed05869beb901055">h_force_ota</a></td></tr>
+<tr class="memitem:af1db9b8800b65c0aed05869beb901055"><td class="memItemLeft" align="right" valign="top">ble_gatts_char_handles_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#af1db9b8800b65c0aed05869beb901055">h_force_ota</a></td></tr>
 <tr class="separator:af1db9b8800b65c0aed05869beb901055"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bb5ad5ecb8305ce1d9bcc75f8829045"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a8bb5ad5ecb8305ce1d9bcc75f8829045">h_set_tare</a></td></tr>
+<tr class="memitem:a8bb5ad5ecb8305ce1d9bcc75f8829045"><td class="memItemLeft" align="right" valign="top">ble_gatts_char_handles_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a8bb5ad5ecb8305ce1d9bcc75f8829045">h_set_tare</a></td></tr>
 <tr class="separator:a8bb5ad5ecb8305ce1d9bcc75f8829045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b7a467be2456314401139c1bb3ce3f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a7b7a467be2456314401139c1bb3ce3f7">h_read_batt</a></td></tr>
+<tr class="memitem:a7b7a467be2456314401139c1bb3ce3f7"><td class="memItemLeft" align="right" valign="top">ble_gatts_char_handles_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a7b7a467be2456314401139c1bb3ce3f7">h_read_batt</a></td></tr>
 <tr class="separator:a7b7a467be2456314401139c1bb3ce3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a898790602137444df52a19f9a2b07cf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a898790602137444df52a19f9a2b07cf3">h_sw_ver</a></td></tr>
+<tr class="memitem:a898790602137444df52a19f9a2b07cf3"><td class="memItemLeft" align="right" valign="top">ble_gatts_char_handles_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a898790602137444df52a19f9a2b07cf3">h_sw_ver</a></td></tr>
 <tr class="separator:a898790602137444df52a19f9a2b07cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a686e3b98f7f0701bae80830c75d356a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a686e3b98f7f0701bae80830c75d356a1">h_controller</a></td></tr>
+<tr class="memitem:a686e3b98f7f0701bae80830c75d356a1"><td class="memItemLeft" align="right" valign="top">ble_gatts_char_handles_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a686e3b98f7f0701bae80830c75d356a1">h_controller</a></td></tr>
 <tr class="separator:a686e3b98f7f0701bae80830c75d356a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d1333de3fb76c2811ee5e1af571568c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structble__gap__adv__params__t.html">ble_gap_adv_params_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a7d1333de3fb76c2811ee5e1af571568c">adv_params</a></td></tr>
+<tr class="memitem:a7d1333de3fb76c2811ee5e1af571568c"><td class="memItemLeft" align="right" valign="top">ble_gap_adv_params_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a7d1333de3fb76c2811ee5e1af571568c">adv_params</a></td></tr>
 <tr class="separator:a7d1333de3fb76c2811ee5e1af571568c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca26965eac2c59d9fa826fcf2c5c710"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="weighing__scale__ble_8c.html#a6ca26965eac2c59d9fa826fcf2c5c710">p_update_ota_flag</a> )(<a class="el" href="weighing__scale__ble_8h.html#ab6c563108bb4ea356b3d11aa3b5492d0">w_scale_ble_force_ota_t</a> force_ota)</td></tr>
 <tr class="separator:a6ca26965eac2c59d9fa826fcf2c5c710"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,7 +216,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ADVERTISING_INTERVAL&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(500, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371a448dcb5272567df7360a964e7c9b91b1">UNIT_0_625_MS</a>)</td>
+          <td class="memname">#define ADVERTISING_INTERVAL&#160;&#160;&#160;MSEC_TO_UNITS(500, UNIT_0_625_MS)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -236,16 +236,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">                       {                                        \</div>
-<div class="line">                       0x02, <a class="code" href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gad4dccf6a7d878c19e731f74608e84d6c">BLE_GAP_AD_TYPE_FLAGS</a>, <a class="code" href="group___b_l_e___g_a_p___a_d_v___f_l_a_g_s.html#gad19a5111127656b299dbdbe5d5e8d4e0">BLE_GAP_ADV_FLAGS_LE_ONLY_LIMITED_DISC_MODE</a>,    \</div>
-<div class="line">                       0x07,<a class="code" href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#ga3c8bb673d4749edc0e5a0d5aa9aa67e1">BLE_GAP_AD_TYPE_MANUFACTURER_SPECIFIC_DATA</a>, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, \</div>
-<div class="line">                       sizeof(<a class="code" href="weighing__scale__ble_8c.html#a33e67820be90baa8a7d35d2ae90956e2">app_device_name</a>) + 1, <a class="code" href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gad18f5d40038aab7e5361e838799fbfd9">BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME</a>, <a class="code" href="weighing__scale__ble_8c.html#a5f5a2c9450ebc584b4fe743c6b1a280b">DEVICE_NAME</a>,   \</div>
-<div class="line">                       0x02, <a class="code" href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gad6b6e3a9e22b85c65a6dcca19bea561f">BLE_GAP_AD_TYPE_TX_POWER_LEVEL</a>, 0x03, \</div>
+<div class="line">                       0x02, BLE_GAP_AD_TYPE_FLAGS, BLE_GAP_ADV_FLAGS_LE_ONLY_LIMITED_DISC_MODE,    \</div>
+<div class="line">                       0x07,BLE_GAP_AD_TYPE_MANUFACTURER_SPECIFIC_DATA, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, \</div>
+<div class="line">                       sizeof(<a class="code" href="weighing__scale__ble_8c.html#a33e67820be90baa8a7d35d2ae90956e2">app_device_name</a>) + 1, BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME, <a class="code" href="weighing__scale__ble_8c.html#a5f5a2c9450ebc584b4fe743c6b1a280b">DEVICE_NAME</a>,   \</div>
+<div class="line">                       0x02, BLE_GAP_AD_TYPE_TX_POWER_LEVEL, 0x03, \</div>
 <div class="line">                       }</div>
-<div class="ttc" id="agroup___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s_html_ga3c8bb673d4749edc0e5a0d5aa9aa67e1"><div class="ttname"><a href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#ga3c8bb673d4749edc0e5a0d5aa9aa67e1">BLE_GAP_AD_TYPE_MANUFACTURER_SPECIFIC_DATA</a></div><div class="ttdeci">#define BLE_GAP_AD_TYPE_MANUFACTURER_SPECIFIC_DATA</div><div class="ttdef"><b>Definition:</b> ble_gap.h:274</div></div>
-<div class="ttc" id="agroup___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s_html_gad18f5d40038aab7e5361e838799fbfd9"><div class="ttname"><a href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gad18f5d40038aab7e5361e838799fbfd9">BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME</a></div><div class="ttdeci">#define BLE_GAP_AD_TYPE_COMPLETE_LOCAL_NAME</div><div class="ttdef"><b>Definition:</b> ble_gap.h:249</div></div>
-<div class="ttc" id="agroup___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s_html_gad4dccf6a7d878c19e731f74608e84d6c"><div class="ttname"><a href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gad4dccf6a7d878c19e731f74608e84d6c">BLE_GAP_AD_TYPE_FLAGS</a></div><div class="ttdeci">#define BLE_GAP_AD_TYPE_FLAGS</div><div class="ttdef"><b>Definition:</b> ble_gap.h:241</div></div>
-<div class="ttc" id="agroup___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s_html_gad6b6e3a9e22b85c65a6dcca19bea561f"><div class="ttname"><a href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gad6b6e3a9e22b85c65a6dcca19bea561f">BLE_GAP_AD_TYPE_TX_POWER_LEVEL</a></div><div class="ttdeci">#define BLE_GAP_AD_TYPE_TX_POWER_LEVEL</div><div class="ttdef"><b>Definition:</b> ble_gap.h:250</div></div>
-<div class="ttc" id="agroup___b_l_e___g_a_p___a_d_v___f_l_a_g_s_html_gad19a5111127656b299dbdbe5d5e8d4e0"><div class="ttname"><a href="group___b_l_e___g_a_p___a_d_v___f_l_a_g_s.html#gad19a5111127656b299dbdbe5d5e8d4e0">BLE_GAP_ADV_FLAGS_LE_ONLY_LIMITED_DISC_MODE</a></div><div class="ttdeci">#define BLE_GAP_ADV_FLAGS_LE_ONLY_LIMITED_DISC_MODE</div><div class="ttdef"><b>Definition:</b> ble_gap.h:285</div></div>
 <div class="ttc" id="aweighing__scale__ble_8c_html_a33e67820be90baa8a7d35d2ae90956e2"><div class="ttname"><a href="weighing__scale__ble_8c.html#a33e67820be90baa8a7d35d2ae90956e2">app_device_name</a></div><div class="ttdeci">const uint8_t app_device_name[]</div><div class="ttdef"><b>Definition:</b> weighing_scale_ble.c:40</div></div>
 <div class="ttc" id="aweighing__scale__ble_8c_html_a5f5a2c9450ebc584b4fe743c6b1a280b"><div class="ttname"><a href="weighing__scale__ble_8c.html#a5f5a2c9450ebc584b4fe743c6b1a280b">DEVICE_NAME</a></div><div class="ttdeci">#define DEVICE_NAME</div><div class="ttdef"><b>Definition:</b> weighing_scale_ble.c:35</div></div>
 </div><!-- fragment --><p>Standard Advertisement data </p>
@@ -274,7 +269,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CONN_SUP_TIMEOUT&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(4000, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371adfbb1465ed01976b118bae937a90cc60">UNIT_10_MS</a>)</td>
+          <td class="memname">#define CONN_SUP_TIMEOUT&#160;&#160;&#160;MSEC_TO_UNITS(4000, UNIT_10_MS)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -339,7 +334,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_CONN_INTERVAL&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(500, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371abd6cc6c5518e69158001db0a5b3c4410">UNIT_1_25_MS</a>)</td>
+          <td class="memname">#define MAX_CONN_INTERVAL&#160;&#160;&#160;MSEC_TO_UNITS(500, UNIT_1_25_MS)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -354,7 +349,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MIN_CONN_INTERVAL&#160;&#160;&#160;<a class="el" href="group__group__common__util.html#gae7c9ee84adc7fdda8b3b8e2175245717">MSEC_TO_UNITS</a>(200, <a class="el" href="group__group__common__util.html#gga456ac33d49271d3e2c371351cd1d6371abd6cc6c5518e69158001db0a5b3c4410">UNIT_1_25_MS</a>)</td>
+          <td class="memname">#define MIN_CONN_INTERVAL&#160;&#160;&#160;MSEC_TO_UNITS(200, UNIT_1_25_MS)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -374,13 +369,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">                       {                                         \</div>
-<div class="line">                       0x05, <a class="code" href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gaa8f9c66d6590289f0b3e96965216a2ea">BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE</a>, \</div>
+<div class="line">                       0x05, BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE, \</div>
 <div class="line">                       LOW_8(<a class="code" href="weighing__scale__uuids_8h.html#a0f550d93d1e2d0a9569c08988843eaf2">WEIGHT_READ_SERVICE</a>), <a class="code" href="weighing__scale__ble_8c.html#ac8df40bc6e569f960a7cbb07b5c9db06">HIGH_8</a>(<a class="code" href="weighing__scale__uuids_8h.html#a0f550d93d1e2d0a9569c08988843eaf2">WEIGHT_READ_SERVICE</a>),\</div>
 <div class="line">                       LOW_8(<a class="code" href="weighing__scale__uuids_8h.html#a1e75a001eb6e24c039bd94ce8f090a76">SYSTEM_SETTING_SERVICE</a>), <a class="code" href="weighing__scale__ble_8c.html#ac8df40bc6e569f960a7cbb07b5c9db06">HIGH_8</a>(<a class="code" href="weighing__scale__uuids_8h.html#a1e75a001eb6e24c039bd94ce8f090a76">SYSTEM_SETTING_SERVICE</a>),\</div>
-<div class="line">                       0x05, <a class="code" href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gaf7738c9995e4110068c9ff6ba56b9f23">BLE_GAP_AD_TYPE_SLAVE_CONNECTION_INTERVAL_RANGE</a>, 0x10, 0x00, 0x10, 0x00\</div>
+<div class="line">                       0x05, BLE_GAP_AD_TYPE_SLAVE_CONNECTION_INTERVAL_RANGE, 0x10, 0x00, 0x10, 0x00\</div>
 <div class="line">                      }</div>
-<div class="ttc" id="agroup___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s_html_gaa8f9c66d6590289f0b3e96965216a2ea"><div class="ttname"><a href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gaa8f9c66d6590289f0b3e96965216a2ea">BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE</a></div><div class="ttdeci">#define BLE_GAP_AD_TYPE_16BIT_SERVICE_UUID_COMPLETE</div><div class="ttdef"><b>Definition:</b> ble_gap.h:243</div></div>
-<div class="ttc" id="agroup___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s_html_gaf7738c9995e4110068c9ff6ba56b9f23"><div class="ttname"><a href="group___b_l_e___g_a_p___a_d___t_y_p_e___d_e_f_i_n_i_t_i_o_n_s.html#gaf7738c9995e4110068c9ff6ba56b9f23">BLE_GAP_AD_TYPE_SLAVE_CONNECTION_INTERVAL_RANGE</a></div><div class="ttdeci">#define BLE_GAP_AD_TYPE_SLAVE_CONNECTION_INTERVAL_RANGE</div><div class="ttdef"><b>Definition:</b> ble_gap.h:256</div></div>
 <div class="ttc" id="aweighing__scale__ble_8c_html_ac8df40bc6e569f960a7cbb07b5c9db06"><div class="ttname"><a href="weighing__scale__ble_8c.html#ac8df40bc6e569f960a7cbb07b5c9db06">HIGH_8</a></div><div class="ttdeci">#define HIGH_8(x)</div><div class="ttdef"><b>Definition:</b> weighing_scale_ble.c:38</div></div>
 <div class="ttc" id="aweighing__scale__uuids_8h_html_a0f550d93d1e2d0a9569c08988843eaf2"><div class="ttname"><a href="weighing__scale__uuids_8h.html#a0f550d93d1e2d0a9569c08988843eaf2">WEIGHT_READ_SERVICE</a></div><div class="ttdeci">#define WEIGHT_READ_SERVICE</div><div class="ttdef"><b>Definition:</b> weighing_scale_uuids.h:16</div></div>
 <div class="ttc" id="aweighing__scale__uuids_8h_html_a1e75a001eb6e24c039bd94ce8f090a76"><div class="ttname"><a href="weighing__scale__uuids_8h.html#a1e75a001eb6e24c039bd94ce8f090a76">SYSTEM_SETTING_SERVICE</a></div><div class="ttdeci">#define SYSTEM_SETTING_SERVICE</div><div class="ttdef"><b>Definition:</b> weighing_scale_uuids.h:23</div></div>
@@ -427,7 +420,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void ble_evt_handler </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structble__evt__t.html">ble_evt_t</a> *&#160;</td>
+          <td class="paramtype">ble_evt_t *&#160;</td>
           <td class="paramname"><em>evt</em></td><td>)</td>
           <td></td>
         </tr>
@@ -691,7 +684,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structble__gap__adv__params__t.html">ble_gap_adv_params_t</a> adv_params</td>
+          <td class="memname">ble_gap_adv_params_t adv_params</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -803,7 +796,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a> h_controller</td>
+          <td class="memname">ble_gatts_char_handles_t h_controller</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -817,7 +810,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a> h_force_ota</td>
+          <td class="memname">ble_gatts_char_handles_t h_force_ota</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -831,7 +824,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a> h_read_batt</td>
+          <td class="memname">ble_gatts_char_handles_t h_read_batt</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -845,7 +838,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a> h_set_tare</td>
+          <td class="memname">ble_gatts_char_handles_t h_set_tare</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -873,7 +866,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a> h_sw_ver</td>
+          <td class="memname">ble_gatts_char_handles_t h_sw_ver</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -887,7 +880,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structble__gatts__char__handles__t.html">ble_gatts_char_handles_t</a> h_weight_data</td>
+          <td class="memname">ble_gatts_char_handles_t h_weight_data</td>
         </tr>
       </table>
 </div><div class="memdoc">

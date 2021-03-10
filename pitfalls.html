@@ -89,16 +89,16 @@ $(document).ready(function(){initNavTree('pitfalls.html',''); initResizable(); }
 <div class="title">Common pitfalls </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md17"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md26"></a>
 Multiple Execution Contexts in lwIP code</h1>
 <p>The most common source of lwIP problems is to have multiple execution contexts inside the lwIP code.</p>
 <p>lwIP can be used in two basic modes: <a class="el" href="group__lwip__nosys.html">Mainloop mode ("NO_SYS")</a> (no OS/RTOS running on target system) or <a class="el" href="group__lwip__os.html">OS mode (TCPIP thread)</a> (there is an OS running on the target system).</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Mainloop Mode</h2>
 <p>In mainloop mode, only <a class="el" href="group__callbackstyle__api.html">Callback-style APIs</a> can be used. The user has two possibilities to ensure there is only one exection context at a time in lwIP:</p>
 <p>1) Deliver RX ethernet packets directly in interrupt context to lwIP by calling netif-&gt;input directly in interrupt. This implies all lwIP callback functions are called in IRQ context, which may cause further problems in application code: IRQ is blocked for a long time, multiple execution contexts in application code etc. When the application wants to call lwIP, it only needs to disable interrupts during the call. If timers are involved, even more locking code is needed to lock out timer IRQ and ethernet IRQ from each other, assuming these may be nested.</p>
 <p>2) Run lwIP in a mainloop. There is example code here: <a class="el" href="group__lwip__nosys.html">Mainloop mode ("NO_SYS")</a>. lwIP is <em>ONLY</em> called from mainloop callstacks here. The ethernet IRQ has to put received telegrams into a queue which is polled in the mainloop. Ensure lwIP is <em>NEVER</em> called from an interrupt, e.g. some SPI IRQ wants to forward data to udp_send() or tcp_write()!</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 OS Mode</h2>
 <p>In OS mode, <a class="el" href="group__callbackstyle__api.html">Callback-style APIs</a> AND <a class="el" href="group__sequential__api.html">Sequential-style APIs</a> can be used. <a class="el" href="group__sequential__api.html">Sequential-style APIs</a> are designed to be called from threads other than the TCPIP thread, so there is nothing to consider here. But <a class="el" href="group__callbackstyle__api.html">Callback-style APIs</a> functions must <em>ONLY</em> be called from TCPIP thread. It is a common error to call these from other threads or from IRQ contexts. ​Ethernet RX needs to deliver incoming packets in the correct way by sending a message to TCPIP thread, this is implemented in <a class="el" href="group__lwip__os.html#gae510f195171bed8499ae94e264a92717">tcpip_input()</a>.​​ Again, ensure lwIP is <em>NEVER</em> called from an interrupt, e.g. some SPI IRQ wants to forward data to udp_send() or tcp_write()!</p>
 <p>1) <a class="el" href="group__lwip__os.html#ga7eb868a1215472ec38f3f2a04d442b9f">tcpip_callback()</a> can be used get called back from TCPIP thread, it is safe to call any <a class="el" href="group__callbackstyle__api.html">Callback-style APIs</a> from there.</p>
