@@ -77,7 +77,7 @@ void weight_mod_disp_supply (weight_mod_disp_state_t state);
 
 /**
  * @brief Function to set current weight as tare weight
- * @param
+ * @param set_tare Flag to set current weight as tare weight
  */
 void weight_mod_set_tare (bool set_tare);
 
