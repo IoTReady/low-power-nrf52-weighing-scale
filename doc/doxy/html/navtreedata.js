@@ -24,18 +24,20 @@
 */
 var NAVTREE =
 [
-  [ "Smart Weighing Scale", "index.html", [
-    [ "Firmware", "index.html#autotoc_md1", null ],
-    [ "Circuit", "index.html#autotoc_md2", [
-      [ "Power Supply", "index.html#autotoc_md3", null ],
-      [ "Battery Charging", "index.html#autotoc_md4", null ],
-      [ "nRF Module", "index.html#autotoc_md5", null ],
-      [ "ADC Circuit: HX711", "index.html#autotoc_md6", null ],
-      [ "E-Ink Display", "index.html#autotoc_md7", null ]
+  [ "Low Power Smart Weighing Scale", "index.html", [
+    [ "Smart Weighing Scale", "index.html", [
+      [ "Firmware", "index.html#autotoc_md1", null ],
+      [ "Circuit", "index.html#autotoc_md2", [
+        [ "Power Supply", "index.html#autotoc_md3", null ],
+        [ "Battery Charging", "index.html#autotoc_md4", null ],
+        [ "nRF Module", "index.html#autotoc_md5", null ],
+        [ "ADC Circuit: HX711", "index.html#autotoc_md6", null ],
+        [ "E-Ink Display", "index.html#autotoc_md7", null ]
+      ] ],
+      [ "PCB", "index.html#autotoc_md8", null ],
+      [ "Hardware Builds", "index.html#autotoc_md9", null ],
+      [ "Software Builds", "index.html#autotoc_md10", null ]
     ] ],
-    [ "PCB", "index.html#autotoc_md8", null ],
-    [ "Hardware Builds", "index.html#autotoc_md9", null ],
-    [ "Software Builds", "index.html#autotoc_md10", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
