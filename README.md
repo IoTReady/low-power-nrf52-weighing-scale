@@ -91,3 +91,5 @@ make upload
 This is a custom makefile, so make sure all Debugger setings are proper. Like, make sure the Debugge name and Serial Number are correct.
 
 These can be set in this [makefile](https://github.com/IoTReady/weighing_scale_nrf/blob/master/firmware/application/w_scale_all/Makefile).
+
+![opensource license](https://github.com/IoTReady/low-power-nrf52-weighing-scale/blob/master/Screenshot_2021-05-27%20Facts%20generator.png)
